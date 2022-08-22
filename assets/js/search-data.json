@@ -2,8 +2,8 @@
   
     
         "post0": {
-            "title": "Title",
-            "content": ". print(&quot;Hello&quot;) .",
+            "title": "My First Jupyter Notebook and some Python Code :)",
+            "content": "print(&quot;Hello&quot;) .",
             "url": "https://yuricoder07.github.io/myfiles/2022/08/21/padelpy.html",
             "relUrl": "/2022/08/21/padelpy.html",
             "date": " • Aug 21, 2022"

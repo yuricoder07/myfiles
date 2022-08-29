@@ -24,10 +24,10 @@
   
     
         ,"post2": {
-            "title": "Firstimage",
+            "title": "Image Post",
             "content": "This is my image post . . .",
-            "url": "https://yuricoder07.github.io/myfiles/2022/08/28/firstimage.html",
-            "relUrl": "/2022/08/28/firstimage.html",
+            "url": "https://yuricoder07.github.io/myfiles/markdown/2022/08/28/firstimage.html",
+            "relUrl": "/markdown/2022/08/28/firstimage.html",
             "date": " • Aug 28, 2022"
         }
         
@@ -117,7 +117,7 @@
   
       ,"page2": {
           "title": "About Me",
-          "content": "Hi, I’m Yuri. I am a student taking AP CSP at DNHS My GitHub [^1]. .",
+          "content": "Hi, I’m Yuri. I am a student taking AP CSP at DNHS My GitHub. . .",
           "url": "https://yuricoder07.github.io/myfiles/about/",
           "relUrl": "/about/",
           "date": ""

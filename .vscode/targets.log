@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Aug 26 14:42:50 2022
+# Make data base, printed on Mon Aug 29 14:36:38 2022
 
 # Variables
 
@@ -47,7 +47,6 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7fdt04HmYf/Listeners
 # automatic
- 
 %F = $(notdir $%)
 # environment
 CONDA_EXE = /Users/yuri/opt/anaconda3/bin/conda
@@ -142,7 +141,7 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/yuri/opt/anaconda3
 # environment
-VSCODE_PID = 14022
+VSCODE_PID = 25607
 # environment
 _CE_CONDA = 
 # environment
@@ -214,7 +213,6 @@ Makefile:
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 remove: .FORCE
@@ -306,6 +304,7 @@ convert: .FORCE
 # VPATH Search Paths
 
 # No `vpath' search paths.
+ 
 
 # No general (`VPATH' variable) search path.
 
@@ -314,6 +313,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Aug 26 14:42:50 2022
+# Finished Make data base on Mon Aug 29 14:36:38 2022
 
  

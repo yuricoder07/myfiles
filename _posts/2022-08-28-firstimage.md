@@ -1,7 +1,7 @@
 ---
 toc: false
 layout: post
-description: Post with Image
+description: This is a post with a doggy image
 categories: [markdown]
 title: Image Post
 ---

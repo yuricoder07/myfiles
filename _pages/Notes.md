@@ -4,7 +4,7 @@ title: CSP Notes
 permalink: /notes/
 ---
 
-Hi, I'm Yuri. I am a student taking AP CSP at DNHS **[My GitHub](https://github.com/yuricoder07)** [^1].
+
 
 What i've learned so far:
 

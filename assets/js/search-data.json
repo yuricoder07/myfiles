@@ -93,6 +93,17 @@
   
 
   
+      ,"page2": {
+          "title": "About Me",
+          "content": "Hi, I’m Yuri. I am a student taking AP CSP at DNHS My GitHub [^1]. .",
+          "url": "https://yuricoder07.github.io/myfiles/about/",
+          "relUrl": "/about/",
+          "date": ""
+      }
+      
+  
+
+  
 
   
   
@@ -114,7 +125,7 @@
   
 
   
-      ,"page10": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://yuricoder07.github.io/myfiles/robots.txt",

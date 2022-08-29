@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      7 min read
     
 </span></p>
 
@@ -158,53 +158,6 @@ window.onload = wrap_img;
     <span class="nb">cd</span> ~
 <span class="k">fi</span>
 <span class="nb">echo</span> <span class="s2">&quot;Directory </span><span class="nv">$project</span><span class="s2"> exists.&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Using conditional statement to create a project directory and project
-Directory /Users/yuri/vscode exists.
-Directory /Users/yuri/vscode/APCSP exists.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Navigate to project, then navigate to area wwhere files were cloned&quot;</span>
-<span class="nb">cd</span> <span class="nv">$project</span>
-<span class="nb">pwd</span>
-
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;list top level or root of files with project pulled from github&quot;</span>
-ls
-
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;list again with hidden files pulled from github&quot;</span>
-ls -a   <span class="c1"># hidden files flag, many shell commands have flags</span>
-
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;list all files in long format&quot;</span>
-ls -al   <span class="c1"># all files and long listing</span>
 </pre></div>
 
     </div>
@@ -302,11 +255,21 @@ drwxr-xr-x   6 yuri  staff     192 Aug 28 19:15 images
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Look for posts&quot;</span>
-<span class="nb">export</span> <span class="nv">posts</span><span class="o">=</span><span class="nv">$project</span>/_posts  <span class="c1"># _posts inside project</span>
-<span class="nb">cd</span> <span class="nv">$posts</span>  <span class="c1"># this should exist per fastpages</span>
-<span class="nb">pwd</span>  <span class="c1"># present working directory</span>
-ls -l  <span class="c1"># list posts</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Navigate to project, then navigate to area wwhere files were cloned&quot;</span>
+<span class="nb">cd</span> <span class="nv">$project</span>
+<span class="nb">pwd</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;list top level or root of files with project pulled from github&quot;</span>
+ls
+
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;list again with hidden files pulled from github&quot;</span>
+ls -a   <span class="c1"># hidden files flag, many shell commands have flags</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;list all files in long format&quot;</span>
+ls -al   <span class="c1"># all files and long listing</span>
 </pre></div>
 
     </div>
@@ -343,11 +306,11 @@ total 32
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Look for notebooks&quot;</span>
-<span class="nb">export</span> <span class="nv">notebooks</span><span class="o">=</span><span class="nv">$project</span>/_notebooks  <span class="c1"># _notebooks is inside project</span>
-<span class="nb">cd</span> <span class="nv">$notebooks</span>   <span class="c1"># this should exist per fastpages</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Look for posts&quot;</span>
+<span class="nb">export</span> <span class="nv">posts</span><span class="o">=</span><span class="nv">$project</span>/_posts  <span class="c1"># _posts inside project</span>
+<span class="nb">cd</span> <span class="nv">$posts</span>  <span class="c1"># this should exist per fastpages</span>
 <span class="nb">pwd</span>  <span class="c1"># present working directory</span>
-ls -l  <span class="c1"># list notebooks</span>
+ls -l  <span class="c1"># list posts</span>
 </pre></div>
 
     </div>
@@ -385,10 +348,11 @@ drwxr-xr-x  3 yuri  staff       96 Aug 21 22:41 my_icons
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Look for images in notebooks, print working directory, list files&quot;</span>
-<span class="nb">cd</span> <span class="nv">$notebooks</span>/images  <span class="c1"># this should exist per fastpages</span>
-<span class="nb">pwd</span>
-ls -l
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Look for notebooks&quot;</span>
+<span class="nb">export</span> <span class="nv">notebooks</span><span class="o">=</span><span class="nv">$project</span>/_notebooks  <span class="c1"># _notebooks is inside project</span>
+<span class="nb">cd</span> <span class="nv">$notebooks</span>   <span class="c1"># this should exist per fastpages</span>
+<span class="nb">pwd</span>  <span class="c1"># present working directory</span>
+ls -l  <span class="c1"># list notebooks</span>
 </pre></div>
 
     </div>
@@ -427,15 +391,10 @@ drwxr-xr-x  3 yuri  staff       96 Aug 21 22:41 my_icons
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Navigate to project, then navigate to area wwhere files were cloned&quot;</span>
-
-<span class="nb">cd</span> <span class="nv">$project</span>
-<span class="nb">echo</span> <span class="s2">&quot;show the contents of README.md&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-
-cat README.md  <span class="c1"># show contents of file, in this case markdown</span>
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;end of README.md&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Look for images in notebooks, print working directory, list files&quot;</span>
+<span class="nb">cd</span> <span class="nv">$notebooks</span>/images  <span class="c1"># this should exist per fastpages</span>
+<span class="nb">pwd</span>
+ls -l
 </pre></div>
 
     </div>
@@ -499,10 +458,15 @@ end of README.md
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Show the shell environment variables, key on left of equal value on right&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Navigate to project, then navigate to area wwhere files were cloned&quot;</span>
+
+<span class="nb">cd</span> <span class="nv">$project</span>
+<span class="nb">echo</span> <span class="s2">&quot;show the contents of README.md&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
 
-env
+cat README.md  <span class="c1"># show contents of file, in this case markdown</span>
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;end of README.md&quot;</span>
 </pre></div>
 
     </div>
@@ -578,16 +542,10 @@ _=/usr/bin/env
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> <span class="nv">$project</span>
-
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Show the shell environment variables, key on left of equal value on right&quot;</span>
 <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;show the secrets of .git&quot;</span>
-<span class="nb">cd</span> .git
-ls -l
 
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;look at config file&quot;</span>
-cat config
+env
 </pre></div>
 
     </div>
@@ -648,36 +606,16 @@ look at config file
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> /tmp
-
-<span class="nv">file</span><span class="o">=</span><span class="s2">&quot;markdown.md&quot;</span>
-<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    rm <span class="nv">$file</span>
-<span class="k">fi</span>
-
-tee -a <span class="nv">$file</span> &gt;/dev/null <span class="s">&lt;&lt;EOF</span>
-<span class="s"># Show Generated Markdown</span>
-<span class="s">This introductory paragraph and this line and the title above are generated using tee with the standard input (&lt;&lt;) redirection operator.</span>
-<span class="s">- This bulleted element is still part of the tee body.</span>
-<span class="s">EOF</span>
-
-<span class="nb">echo</span> <span class="s2">&quot;- This bulleted element and lines below are generated using echo with standard output (&gt;&gt;) redirection operator.&quot;</span> &gt;&gt; <span class="nv">$file</span>
-<span class="nb">echo</span> <span class="s2">&quot;- The list definition, as is, is using space to seperate lines.  Thus the use of commas and hyphens in output.&quot;</span> &gt;&gt; <span class="nv">$file</span>
-<span class="nv">actions</span><span class="o">=(</span><span class="s2">&quot;ls,list-directory&quot;</span> <span class="s2">&quot;cd,change-directory&quot;</span> <span class="s2">&quot;pwd,present-working-directory&quot;</span> <span class="s2">&quot;if-then-fi,test-condition&quot;</span> <span class="s2">&quot;env,bash-environment-variables&quot;</span> <span class="s2">&quot;cat,view-file-contents&quot;</span> <span class="s2">&quot;tee,write-to-output&quot;</span> <span class="s2">&quot;echo,display-content-of-string&quot;</span> <span class="s2">&quot;echo_text_&gt;\$file,write-content-to-file&quot;</span> <span class="s2">&quot;echo_text_&gt;&gt;\$file,append-content-to-file&quot;</span><span class="o">)</span>
-<span class="k">for</span> action in <span class="si">${</span><span class="nv">actions</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>  <span class="c1"># for loop is very similar to other language, though [@], semi-colon, do are new</span>
-  <span class="nv">action</span><span class="o">=</span><span class="si">${</span><span class="nv">action</span><span class="p">//-/ </span><span class="si">}</span>  <span class="c1"># convert dash to space</span>
-  <span class="nv">action</span><span class="o">=</span><span class="si">${</span><span class="nv">action</span><span class="p">//,/: </span><span class="si">}</span> <span class="c1"># convert comma to colon</span>
-  <span class="nv">action</span><span class="o">=</span><span class="si">${</span><span class="nv">action</span><span class="p">//_text_/ </span><span class="se">\&quot;</span><span class="nv">sample</span><span class="p"> text</span><span class="se">\&quot;</span><span class="p"> </span><span class="si">}</span> <span class="c1"># convert _text_ to sample text, note escape character \ to avoid &quot;&quot; having meaning</span>
-  <span class="nb">echo</span> <span class="s2">&quot;    - </span><span class="si">${</span><span class="nv">action</span><span class="p">//-/ </span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="nv">$file</span>  <span class="c1"># echo is redirected to file with &gt;&gt;</span>
-<span class="k">done</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> <span class="nv">$project</span>
 
 <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;File listing and status&quot;</span>
-ls -l <span class="nv">$file</span> <span class="c1"># list file</span>
-wc <span class="nv">$file</span>   <span class="c1"># show words</span>
-mdless <span class="nv">$file</span>  <span class="c1"># this requires installation, but renders markown from terminal</span>
+<span class="nb">echo</span> <span class="s2">&quot;show the secrets of .git&quot;</span>
+<span class="nb">cd</span> .git
+ls -l
 
-rm <span class="nv">$file</span>  <span class="c1"># clean up termporary file</span>
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;look at config file&quot;</span>
+cat config
 </pre></div>
 
     </div>

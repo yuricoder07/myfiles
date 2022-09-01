@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Aug 29 14:36:38 2022
+# Make data base, printed on Thu Sep  1 08:59:08 2022
 
 # Variables
 
@@ -36,6 +36,7 @@ _ = /usr/bin/make
 MAKEFILE_LIST :=  Makefile
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
+ 
 # environment
 VSCODE_CWD = /
 # environment
@@ -213,6 +214,7 @@ Makefile:
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
+ 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 remove: .FORCE
@@ -304,7 +306,6 @@ convert: .FORCE
 # VPATH Search Paths
 
 # No `vpath' search paths.
- 
 
 # No general (`VPATH' variable) search path.
 
@@ -313,6 +314,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug 29 14:36:38 2022
+# Finished Make data base on Thu Sep  1 08:59:08 2022
 
  

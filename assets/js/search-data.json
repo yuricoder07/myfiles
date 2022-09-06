@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Table Post",
-            "content": "Week Sprint Overview . 03 | Creative Development | TBD | . 02 | Data Abstraction | This week we dove deeper into python code with lists and dictionaries, we also learned basic html by creating this table | . 01 | Introduction to Python | This week we learned basic python syntax by making a quiz in python, we also used how to use bash kernel and shell script by checking what tools are installed | . 00 💰 | Tool Setup | This week we installed WSL, vscode, anaconda, and python. We also learned how to use fastpages, github, markdown, and Jupyter | .",
+            "content": "Week Sprint Overview . 03 | Creative Development | TBD | . 02 | Data Abstraction | This week we dove deeper into python code with lists and dictionaries, we also learned basic html by creating this table | . 01 | Introduction to Python | This week we learned basic python syntax by making a quiz in python, we also used how to use bash kernel and shell script by checking what tools are installed | . 00 | Tool Setup | This week we installed WSL, vscode, anaconda, and python. We also learned how to use fastpages, github, markdown, and Jupyter | .",
             "url": "https://yuricoder07.github.io/myfiles/markdown/2022/09/05/table.html",
             "relUrl": "/markdown/2022/09/05/table.html",
             "date": " • Sep 5, 2022"

@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Thu Sep  1 08:59:08 2022
+# Make data base, printed on Tue Sep  6 14:11:52 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/yuri/vscode/myfiles
+CURDIR := /Users/yuri/vscode/APCSP/myfiles
 # makefile
 SHELL = /bin/sh
 # environment
@@ -33,10 +33,10 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 1)
+ 
 MAKEFILE_LIST :=  Makefile
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
- 
 # environment
 VSCODE_CWD = /
 # environment
@@ -52,7 +52,7 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7fdt04HmYf/Listeners
 # environment
 CONDA_EXE = /Users/yuri/opt/anaconda3/bin/conda
 # environment
-PWD = /Users/yuri/vscode/myfiles
+PWD = /Users/yuri/vscode/APCSP/myfiles
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -156,9 +156,10 @@ LANG = C
 
 # Directories
 
-# . (device 16777223, inode 25323598): 30 files, no impossibilities.
+# . (device 16777223, inode 25318054): 31 files, no impossibilities.
 
-# 30 files, no impossibilities in 1 directories.
+ 
+# 31 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -210,11 +211,10 @@ server-detached: .FORCE
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-21 22:41:36
+#  Last modified 2022-08-21 22:20:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
- 
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 remove: .FORCE
@@ -270,6 +270,7 @@ help:
 #  commands to execute (from `Makefile', line 2):
 	cat Makefile
 	
+ 
 
 # Not a target:
 .DEFAULT:
@@ -314,6 +315,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu Sep  1 08:59:08 2022
+# Finished Make data base on Tue Sep  6 14:11:52 2022
 
  

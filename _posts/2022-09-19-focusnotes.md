@@ -6,7 +6,7 @@ categories: [markdown]
 title: Focus and Habits
 ---
 
-# Laurie Santos Psychology and the Good Life --> Notes
+# Laurie Santos Psychology and the Good Life Notes
 
 ## Students at Yale are privelaged to be there, but react with anxiety because they are so stressed, they cant make use of the good opportunities they have
 
@@ -19,10 +19,10 @@ title: Focus and Habits
 
 ## Things in greatful for:
 
-### My family
-### My friends
-### My life
-### My everyday essentials
+#### My family
+#### My friends
+#### My life
+#### My everyday essentials
 
 
 # Gratitude towards friends

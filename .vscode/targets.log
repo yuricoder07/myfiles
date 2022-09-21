@@ -6,11 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Mon Sep 19 22:32:38 2022
+# Make data base, printed on Tue Sep 20 14:59:39 2022
 
 # Variables
 
@@ -47,7 +44,6 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7fdt04HmYf/Listeners
 # automatic
- 
 %F = $(notdir $%)
 # environment
 CONDA_EXE = /Users/yuri/opt/anaconda3/bin/conda
@@ -156,9 +152,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777223, inode 25318054): 31 files, no impossibilities.
+# . (device 16777223, inode 25318054): 32 files, no impossibilities.
 
-# 31 files, no impossibilities in 1 directories.
+# 32 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -288,7 +284,6 @@ convert: .FORCE
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  commands to execute (from `Makefile', line 29):
 	docker-compose up converter
 	
@@ -314,6 +309,8 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Sep 19 22:32:38 2022
+# Finished Make data base on Tue Sep 20 14:59:39 2022
 
  
+make: *** No rule to make target `all'.  Stop.
+

@@ -215,6 +215,17 @@
 
   
       ,"page2": {
+          "title": "Submenu",
+          "content": "&lt;!DOCTYPE html&gt; . . Home Javascript Post Notebook .",
+          "url": "https://yuricoder07.github.io/myfiles/_pages/Submenue.html",
+          "relUrl": "/_pages/Submenue.html",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page3": {
           "title": "About Me",
           "content": "Hi, I’m Yuri. I am a student taking AP CSP at DNHS My GitHub. . dasdasdasdas .",
           "url": "https://yuricoder07.github.io/myfiles/about/",
@@ -224,17 +235,6 @@
       
   
 
-  
-
-  
-      ,"page4": {
-          "title": "Javascript",
-          "content": "Jupyter Notebook that shows personal usage of Jupyter JavaScript Kernel . Link . Post that uses HTML fragments and JavaScript data to build a table . Link .",
-          "url": "https://yuricoder07.github.io/myfiles/javascript/",
-          "relUrl": "/javascript/",
-          "date": ""
-      }
-      
   
 
   

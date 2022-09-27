@@ -13,4 +13,3 @@ title: Agile Methodology
 ![]({{ site.baseurl }}/images/info.png)
 
 
-

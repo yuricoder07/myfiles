@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Tue Oct  4 18:47:19 2022
+# Make data base, printed on Mon Oct 10 12:49:18 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/yuri/vscode/APCSP/myfiles
+CURDIR := /Users/yuri/vscode/myfiles
 # makefile
 SHELL = /bin/sh
 # environment
@@ -51,7 +51,7 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.7fdt04HmYf/Listeners
 # environment
 CONDA_EXE = /Users/yuri/opt/anaconda3/bin/conda
 # environment
-PWD = /Users/yuri/vscode/APCSP/myfiles
+PWD = /Users/yuri/vscode/myfiles
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -155,9 +155,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777223, inode 25318054): 36 files, no impossibilities.
+# . (device 16777223, inode 27099200): 33 files, no impossibilities.
 
-# 36 files, no impossibilities in 1 directories.
+# 33 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -209,13 +209,12 @@ server-detached: .FORCE
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-21 22:20:39
+#  Last modified 2022-10-06 14:49:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
- 
 remove: .FORCE
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -273,6 +272,7 @@ help:
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -313,6 +313,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Oct  4 18:47:19 2022
+# Finished Make data base on Mon Oct 10 12:49:18 2022
 
  

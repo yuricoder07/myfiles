@@ -90,11 +90,14 @@ type: pbl
     }
     // setter for DOM values
     function setConversions(binary) {
+        let decimal = parseInt(binary, 2);
         document.getElementById('binary').innerHTML = binary;
         // Octal conversion
         document.getElementById('octal').innerHTML = parseInt(binary, 2).toString(8);
         // Hexadecimal conversion
         document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
+        // Character being converted
+        document.getElementById('character').innerHTML = String.fromCharCode(parseInt(binary, 2));
         // Decimal conversion
         document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString();
     }

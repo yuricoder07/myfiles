@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Bash Kernel Proof",
-            "content": "",
+            "content": "echo If you see this, my Bash Kernel is working! . If you see this, my Bash Kernel is working! .",
             "url": "https://yuricoder07.github.io/myfiles/jupyternotebook/2022/11/18/bashkernel.html",
             "relUrl": "/jupyternotebook/2022/11/18/bashkernel.html",
             "date": " • Nov 18, 2022"

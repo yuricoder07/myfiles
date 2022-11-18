@@ -76,6 +76,11 @@ window.onload = wrap_img;
 <!-- Hack 2: change to 24 bits and add a color code and display color when 24 bits, think about display on this one -->
 <!-- Hack 3: do your own thing -->
 
+<!--this is the code we work on-->
+<!--all the liquid code only exists in our enviorment, but before it gets to the browswer enviorment it transforms-->
+<!--the makeover involves github-->
+<!--metadata is a form of frontmatter-->
+
 <div class="container bg-primary">
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
         <span class="fs-4">Binary Math with Conversions</span>
@@ -89,6 +94,7 @@ window.onload = wrap_img;
                 <th>Octal</th>
                 <th>Hexadecimal</th>
                 <th>Decimal</th>
+                <th>character</th>
                 <th>Minus</th>
             </tr>
             <tr>
@@ -97,13 +103,14 @@ window.onload = wrap_img;
                 <td id="octal">0</td>
                 <td id="hexadecimal">0</td>
                 <td id="decimal">0</td>
+                <td id="character">null</td>
                 <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
             </tr>
             </table>
         </div>
         <div class="col-12">
             
-             
+            2 
             <table class="table">
             <tr>
                 
@@ -120,6 +127,26 @@ window.onload = wrap_img;
                     <button type="button" id="butt2" onclick="javascript:toggleBit(2)">Turn on</button>
                 </td>
                 
+                <td><img class="img-responsive py-3" id="bulb3" src="/myfiles/images/bulb_off.png" alt="" width="40" height="Auto" />
+                    <button type="button" id="butt3" onclick="javascript:toggleBit(3)">Turn on</button>
+                </td>
+                
+                <td><img class="img-responsive py-3" id="bulb4" src="/myfiles/images/bulb_off.png" alt="" width="40" height="Auto" />
+                    <button type="button" id="butt4" onclick="javascript:toggleBit(4)">Turn on</button>
+                </td>
+                
+                <td><img class="img-responsive py-3" id="bulb5" src="/myfiles/images/bulb_off.png" alt="" width="40" height="Auto" />
+                    <button type="button" id="butt5" onclick="javascript:toggleBit(5)">Turn on</button>
+                </td>
+                
+                <td><img class="img-responsive py-3" id="bulb6" src="/myfiles/images/bulb_off.png" alt="" width="40" height="Auto" />
+                    <button type="button" id="butt6" onclick="javascript:toggleBit(6)">Turn on</button>
+                </td>
+                
+                <td><img class="img-responsive py-3" id="bulb7" src="/myfiles/images/bulb_off.png" alt="" width="40" height="Auto" />
+                    <button type="button" id="butt7" onclick="javascript:toggleBit(7)">Turn on</button>
+                </td>
+                
             </tr>
             <tr>
                 
@@ -130,6 +157,16 @@ window.onload = wrap_img;
                 
                 <td><input type="text" id="digit2" value="0" size="1" readonly="" /></td>
                 
+                <td><input type="text" id="digit3" value="0" size="1" readonly="" /></td>
+                
+                <td><input type="text" id="digit4" value="0" size="1" readonly="" /></td>
+                
+                <td><input type="text" id="digit5" value="0" size="1" readonly="" /></td>
+                
+                <td><input type="text" id="digit6" value="0" size="1" readonly="" /></td>
+                
+                <td><input type="text" id="digit7" value="0" size="1" readonly="" /></td>
+                
             </tr>
             </table>
         </div>
@@ -137,12 +174,13 @@ window.onload = wrap_img;
 </div>
 
 <script>
-    const BITS = 3;
+    const BITS = 8;
     const MAX = 2 ** BITS - 1;
     const MSG_ON = "Turn on";
     const IMAGE_ON = "/myfiles/images/bulb_on.gif";
     const MSG_OFF = "Turn off";
     const IMAGE_OFF = "/myfiles/images/bulb_off.png"
+
 
     // return string with current value of each bit
     function getBits() {
@@ -154,11 +192,14 @@ window.onload = wrap_img;
     }
     // setter for DOM values
     function setConversions(binary) {
+        let decimal = parseInt(binary, 2);
         document.getElementById('binary').innerHTML = binary;
         // Octal conversion
         document.getElementById('octal').innerHTML = parseInt(binary, 2).toString(8);
         // Hexadecimal conversion
         document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
+        // Character being converted
+        document.getElementById('character').innerHTML = String.fromCharCode(parseInt(binary, 2));
         // Decimal conversion
         document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString();
     }
@@ -227,6 +268,7 @@ window.onload = wrap_img;
         }
         }
     }
+// work please :( 
 </script>
 
 

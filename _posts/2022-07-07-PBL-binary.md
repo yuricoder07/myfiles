@@ -15,7 +15,11 @@ type: pbl
 <!-- Hack 3: do your own thing -->
 
 
-{% assign BITS = 3 %}
+{% assign BITS = 8 %}
+<!--this is the code we work on-->
+<!--all the liquid code only exists in our enviorment, but before it gets to the browswer enviorment it transforms-->
+<!--the makeover involves github-->
+<!--metadata is a form of frontmatter-->
 
 <div class="container bg-primary">
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
@@ -30,6 +34,7 @@ type: pbl
                 <th>Octal</th>
                 <th>Hexadecimal</th>
                 <th>Decimal</th>
+                <th>character</th>
                 <th>Minus</th>
             </tr>
             <tr>
@@ -38,13 +43,14 @@ type: pbl
                 <td id="octal">0</td>
                 <td id="hexadecimal">0</td>
                 <td id="decimal">0</td>
+                <td id="character">null</td>
                 <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
             </tr>
             </table>
         </div>
         <div class="col-12">
             {% comment %}Liquid for loop includes last number, thus the Minus{% endcomment %}
-            {% assign bits = BITS | minus: 1 %} 
+            {% assign bits = BITS | minus: 1 %}2 
             <table class="table">
             <tr>
                 {% comment %}Build many bits{% endcomment %}
@@ -72,6 +78,7 @@ type: pbl
     const IMAGE_ON = "{{site.baseurl}}/images/bulb_on.gif";
     const MSG_OFF = "Turn off";
     const IMAGE_OFF = "{{site.baseurl}}/images/bulb_off.png"
+
 
     // return string with current value of each bit
     function getBits() {
@@ -156,4 +163,6 @@ type: pbl
         }
         }
     }
+// work please :( 
 </script>
+

@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Dec  2 11:31:32 2022
+# Make data base, printed on Fri Dec  2 12:11:14 2022
 
 # Variables
 
@@ -138,11 +138,10 @@ _CE_M =
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
- 
 # environment
 CONDA_PREFIX = /Users/yuri/opt/anaconda3
 # environment
-VSCODE_PID = 82359
+VSCODE_PID = 97261
 # environment
 _CE_CONDA = 
 # environment
@@ -212,6 +211,7 @@ Makefile:
 #  Implicit rule search has been done.
 #  Last modified 2022-10-06 14:49:44
 #  File has been updated.
+ 
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -313,6 +313,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Dec  2 11:31:32 2022
+# Finished Make data base on Fri Dec  2 12:11:14 2022
 
  

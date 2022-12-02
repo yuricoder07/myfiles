@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Dec  2 09:06:41 2022
+# Make data base, printed on Fri Dec  2 11:31:32 2022
 
 # Variables
 
@@ -65,7 +65,6 @@ VSCODE_CODE_CACHE_PATH = /Users/yuri/Library/Application Support/Code/CachedData
 # environment
 LOGNAME = yuri
 # environment
- 
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 CONDA_PROMPT_MODIFIER = (base) 
@@ -139,6 +138,7 @@ _CE_M =
 .INCLUDE_DIRS = /usr/local/include
 # environment
 MAKELEVEL := 0
+ 
 # environment
 CONDA_PREFIX = /Users/yuri/opt/anaconda3
 # environment
@@ -313,7 +313,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Dec  2 09:06:41 2022
- 
+# Finished Make data base on Fri Dec  2 11:31:32 2022
 
  

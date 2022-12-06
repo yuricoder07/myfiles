@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Dec  5 11:17:00 2022
+# Make data base, printed on Mon Dec  5 18:47:38 2022
 
 # Variables
 
@@ -22,6 +22,7 @@ make: *** No rule to make target `all'.  Stop.
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
+ 
 # automatic
 @F = $(notdir $@)
 # makefile
@@ -70,7 +71,6 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 CONDA_PROMPT_MODIFIER = (base) 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
- 
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -141,6 +141,7 @@ _CE_M =
 MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/yuri/opt/anaconda3
+ 
 # environment
 VSCODE_PID = 1678
 # environment
@@ -156,10 +157,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777222, inode 27099200): 39 files, no impossibilities.
+# . (device 16777222, inode 27099200): 38 files, no impossibilities.
 
- 
-# 39 files, no impossibilities in 1 directories.
+# 38 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -270,6 +270,7 @@ help:
 #  commands to execute (from `Makefile', line 2):
 	cat Makefile
 	
+ 
 
 # Not a target:
 .DEFAULT:
@@ -314,6 +315,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Dec  5 11:17:00 2022
+# Finished Make data base on Mon Dec  5 18:47:38 2022
 
  

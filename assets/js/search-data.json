@@ -2,8 +2,8 @@
   
     
         "post0": {
-            "title": "Unit 2 | Binary/Data Terms",
-            "content": "",
+            "title": "Unit 3 | Algorithm/Programming Terms",
+            "content": "Unit 3 Vocabulary . Term Definition Example . Lists | A list is a sequence of several variables, grouped together under a single name | | . 2D Lists | A 2D array is an array of arrays that can be represented in matrix form, like rows and columns. | | . Dictionaries | a set of words or other text strings made for use in applications such as spelling checkers. | | . Class | a class is a template definition of the method s and variable s in a particular kind of object | | . Algorithms | An algorithm is a step-by-step procedure that defines a set of instructions that must be carried out in a specific order to produce the desired result. | | . Sequence | the order that commands are executed by a computer | | . Selection | Selection is a programming construct where a section of code is run only if a condition is met | | . Iteration | sequence of instructions or code being repeated until a specific end result is achieved | | . Truth Tables | A truth table is a breakdown of all the possible truth values returned by a logical expression | | . Operators | an operator is a character that represents a specific mathematical or logical action or process | | . If Else Conditionals | Conditional statements are used through the various programming languages to instruct the computer on the decision to make when given some conditions | | . Parameters | special kind of variable in computer programming language that is used to pass information between functions or procedures. | | .",
             "url": "https://yuricoder07.github.io/myfiles/jupyternotebook/2022/12/06/unit3vocab.html",
             "relUrl": "/jupyternotebook/2022/12/06/unit3vocab.html",
             "date": " • Dec 6, 2022"

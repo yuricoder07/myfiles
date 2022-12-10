@@ -482,6 +482,6 @@ pre code { font-size: 15px !important; }
 
 p code { font-size: 19px; }
 
-html, body { background-image: url("https://yuricoder07.github.io/myfiles/images/amoungusstars.png"); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-color: #cccccc; }
+html, body { background-image: url("https://yuricoder07.github.io/myfiles/images/amoungusstars.png"); background-repeat: repeat; background-attachment: fixed; background-size: cover; background-color: #cccccc; }
 
 /*# sourceMappingURL=style.css.map */

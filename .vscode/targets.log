@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Fri Dec  9 11:24:58 2022
+
+# Make data base, printed on Mon Dec 12 11:21:52 2022
 
 # Variables
 
@@ -37,6 +40,7 @@ __CFBundleIdentifier = com.microsoft.VSCode
 VSCODE_CWD = /
 # environment
 PATH = /Users/yuri/opt/anaconda3/bin:/Users/yuri/opt/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+ 
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -56,9 +60,6 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/yuri
 # default
- 
-make: *** No rule to make target `all'.  Stop.
-
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
 VSCODE_CODE_CACHE_PATH = /Users/yuri/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
@@ -169,6 +170,7 @@ stop: .FORCE
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 33):
 	docker-compose stop
 	docker ps | grep fastpages | awk '{print $1}' | xargs docker stop
@@ -295,6 +297,7 @@ convert: .FORCE
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 #  commands to execute (from `Makefile', line 53):
 	chmod -R u+rw .
 	
@@ -311,8 +314,7 @@ convert: .FORCE
 # # of strcache buffers: 1
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
- 
 
-# Finished Make data base on Fri Dec  9 11:24:58 2022
+# Finished Make data base on Mon Dec 12 11:21:52 2022
 
  

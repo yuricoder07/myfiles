@@ -28,7 +28,7 @@ layout: notebook
 * Enable our customers to make the world healthier, cleaner and safer: Thermo Fisher Scientific
 
 
---------------------------------------------------------------------------------------------------
+-a-------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 
 # Kris Porter (Developer Operation, Software Engineer - SRE, DevOps)
@@ -60,3 +60,12 @@ layout: notebook
 * Streaming media Infastructure for the 2012 Olympic Games
 * **Analytics infastructure** projects (locationSmart, Qualcomm)
 * **Twitter Projects** (new Data Center Deployments)
+
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+
+# Questions/after presentation
+* Continuous learning, learning how to learn. Learning new coding languages
+* Being Adaptive, listening and understanding, and translating it towards the technology solving the requirments
+
+

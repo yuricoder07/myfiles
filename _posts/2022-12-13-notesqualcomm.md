@@ -1,14 +1,9 @@
 ---
-keywords: fastai
-description: ""
-title: Compsci Extra Credit Seminar
 toc: true
-branch: master
-badges: true
-comments: true
-permalink: /markdown/ec
+layout: post
+description: CompSci Extra Credit
 categories: [markdown]
-layout: notebook
+title: CompSci Extra Credut Seminar
 ---
 
 # Kathyleen Beveridge (Project Managements)

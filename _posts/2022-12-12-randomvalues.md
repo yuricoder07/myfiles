@@ -276,9 +276,11 @@ PROCEDURE Dice(n)
 	<span class="n">tempList</span> <span class="o">=</span> <span class="p">[]</span>
 	<span class="n">evenList</span> <span class="o">=</span> <span class="p">[]</span>
 	<span class="n">oddList</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="c1"># loops and adds all the randomly generated numbers into temp list</span>
 	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 		<span class="n">nums</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
 		<span class="n">tempList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+	<span class="c1"># loops through the length of templist, and checks if the number position is even or odd and appends accordingly</span>
 	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tempList</span><span class="p">)):</span>
 		<span class="c1"># Even</span>
 		<span class="k">if</span> <span class="n">tempList</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">%</span><span class="k">2</span> == 0:
@@ -289,8 +291,9 @@ PROCEDURE Dice(n)
 			<span class="n">oddList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tempList</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
 			<span class="k">continue</span>
 	<span class="c1"># prints odd list and even list</span>
-	<span class="nb">print</span><span class="p">(</span><span class="n">evenList</span><span class="p">)</span>
-	<span class="nb">print</span><span class="p">(</span><span class="n">oddList</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tempList</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; List of Generated Nums&quot;</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">evenList</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; List of Sorted Evens&quot;</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">oddList</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot; List of Sorted Odds&quot;</span><span class="p">)</span>
 <span class="n">genSort</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
@@ -304,8 +307,92 @@ PROCEDURE Dice(n)
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[28, 6]
-[7]
+<pre>[30, 6, 10, 6, 11, 26, 8, 2] List of Generated Nums
+[30, 6, 10, 6, 26, 8, 2] List of Sorted Evens
+[11] List of Sorted Odds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the polynomial</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+
+<span class="c1"># Calculate the derivative</span>
+<span class="n">deriv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyder</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+
+<span class="c1"># Print the derivative</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deriv</span><span class="p">)</span>
+
+<span class="c1"># when x = 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;When x = 9  f&#39;(x)=&quot;</span><span class="p">,</span> <span class="n">deriv</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>    3
+88 x + 14 x + 14
+When x = 9  f&#39;(x)= 64292
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># List of animals (dogs and cats)</span>
+<span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dog1&#39;</span><span class="p">,</span> <span class="s1">&#39;dog2&#39;</span><span class="p">,</span> <span class="s1">&#39;dog3&#39;</span><span class="p">,</span> <span class="s1">&#39;dog4&#39;</span><span class="p">,</span> <span class="s1">&#39;dog5&#39;</span><span class="p">,</span> <span class="s1">&#39;dog6&#39;</span><span class="p">,</span> <span class="s1">&#39;dog7&#39;</span><span class="p">,</span> <span class="s1">&#39;dog8&#39;</span><span class="p">,</span> <span class="s1">&#39;dog9&#39;</span><span class="p">,</span> <span class="s1">&#39;dog10&#39;</span><span class="p">,</span> <span class="s1">&#39;cat1&#39;</span><span class="p">,</span> <span class="s1">&#39;cat2&#39;</span><span class="p">,</span> <span class="s1">&#39;cat3&#39;</span><span class="p">,</span> <span class="s1">&#39;cat4&#39;</span><span class="p">,</span> <span class="s1">&#39;cat5&#39;</span><span class="p">,</span> <span class="s1">&#39;cat6&#39;</span><span class="p">,</span> <span class="s1">&#39;cat7&#39;</span><span class="p">,</span> <span class="s1">&#39;cat8&#39;</span><span class="p">,</span> <span class="s1">&#39;cat9&#39;</span><span class="p">,</span> <span class="s1">&#39;cat10&#39;</span><span class="p">]</span>
+<span class="c1"># uses the shuffle function from the random library to shuffle the values in the list</span>
+<span class="n">newOrder</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+<span class="c1"># prints the new orderd list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;cat9&#39;, &#39;dog4&#39;, &#39;cat1&#39;, &#39;dog6&#39;, &#39;cat4&#39;, &#39;cat8&#39;, &#39;cat10&#39;, &#39;dog8&#39;, &#39;cat3&#39;, &#39;dog7&#39;, &#39;cat2&#39;, &#39;dog3&#39;, &#39;dog2&#39;, &#39;cat5&#39;, &#39;dog5&#39;, &#39;dog10&#39;, &#39;cat7&#39;, &#39;cat6&#39;, &#39;dog1&#39;, &#39;dog9&#39;]
 </pre>
 </div>
 </div>

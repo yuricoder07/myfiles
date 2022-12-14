@@ -8,6 +8,7 @@ badges: true
 comments: true
 permalink: /markdown/ec
 categories: [markdown]
+layout: notebook
 ---
 
 # Kathyleen Beveridge (Project Managements)

@@ -6,7 +6,6 @@ toc: true
 branch: master
 badges: true
 comments: true
-permalink: /jupyter/libraries
 categories: [jupyter,markdown]
 nb_path: _notebooks/2022-12-12-randomvalues.ipynb
 layout: notebook

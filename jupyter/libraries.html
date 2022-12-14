@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Compsci Extra Credit Seminar | Yuri’s Blog APCSP 2022-2023</title>
+<title>Unit 3 Sections 14 and 15 | Yuri’s Blog APCSP 2022-2023</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Compsci Extra Credit Seminar" />
+<meta property="og:title" content="Unit 3 Sections 14 and 15" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A student learning how to code." />
-<meta property="og:description" content="A student learning how to code." />
+<meta name="description" content="Libraries and Random Values" />
+<meta property="og:description" content="Libraries and Random Values" />
 <link rel="canonical" href="https://yuricoder07.github.io/myfiles/jupyter/libraries" />
 <meta property="og:url" content="https://yuricoder07.github.io/myfiles/jupyter/libraries" />
 <meta property="og:site_name" content="Yuri’s Blog APCSP 2022-2023" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-12-13T00:00:00-06:00" />
+<meta property="article:published_time" content="2022-12-12T00:00:00-06:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Compsci Extra Credit Seminar" />
+<meta property="twitter:title" content="Unit 3 Sections 14 and 15" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-13T00:00:00-06:00","datePublished":"2022-12-13T00:00:00-06:00","description":"A student learning how to code.","headline":"Compsci Extra Credit Seminar","mainEntityOfPage":{"@type":"WebPage","@id":"https://yuricoder07.github.io/myfiles/jupyter/libraries"},"url":"https://yuricoder07.github.io/myfiles/jupyter/libraries"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-12T00:00:00-06:00","datePublished":"2022-12-12T00:00:00-06:00","description":"Libraries and Random Values","headline":"Unit 3 Sections 14 and 15","mainEntityOfPage":{"@type":"WebPage","@id":"https://yuricoder07.github.io/myfiles/jupyter/libraries"},"url":"https://yuricoder07.github.io/myfiles/jupyter/libraries"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/myfiles/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://yuricoder07.github.io/myfiles/feed.xml" title="Yuri's Blog | APCSP 2022-2023" /><link rel="shortcut icon" type="image/x-icon" href="/myfiles/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,13 +73,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Compsci Extra Credit Seminar</h1><p class="page-description"></p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-12-13T00:00:00-06:00" itemprop="datePublished">
-        Dec 13, 2022
+    <h1 class="post-title p-name" itemprop="name headline">Unit 3 Sections 14 and 15</h1><p class="page-description">Libraries and Random Values</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-12-12T00:00:00-06:00" itemprop="datePublished">
+        Dec 12, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      4 min read
     
 </span></p>
 
@@ -127,114 +127,474 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#kathyleen-beveridge-project-managements">Kathyleen Beveridge (Project Managements)</a>
+<li class="toc-entry toc-h3"><a href="#wget-https://raw.githubusercontent.com/aidenhuynh/CS_Swag/master/_notebooks/2022-11-30-randomvalues.ipynb">wget https://raw.githubusercontent.com/aidenhuynh/CS_Swag/master/_notebooks/2022-11-30-randomvalues.ipynb </a></li>
+<li class="toc-entry toc-h1"><a href="#Libraries">Libraries </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#company-mission-statements">Company Mission Statements</a></li>
+<li class="toc-entry toc-h3"><a href="#Why-are-libraries-important?">Why are libraries important? </a></li>
+<li class="toc-entry toc-h3"><a href="#A-few-libraries-that-simplify-coding-processes:">A few libraries that simplify coding processes: </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks:">Hacks: </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#API’s">API’s </a></li>
+<li class="toc-entry toc-h3"><a href="#Activity:-Walkthrough-with-NumPy">Activity: Walkthrough with NumPy </a></li>
+<li class="toc-entry toc-h3"><a href="#Example-of-using-NumPy-for-arrays:">Example of using NumPy for arrays: </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Example-of-using-NumPy-for-derivatives:">Example of using NumPy for derivatives: </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#kris-porter-developer-operation-software-engineer---sre-devops">Kris Porter (Developer Operation, Software Engineer - SRE, DevOps)</a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#research">Research</a></li>
-<li class="toc-entry toc-h2"><a href="#time-line">Time Line</a></li>
-<li class="toc-entry toc-h2"><a href="#continuous-learning---highlights">Continuous Learning - highlights</a></li>
-<li class="toc-entry toc-h2"><a href="#some-projects-he-worked-on">Some Projects he worked on</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#questionsafter-presentation">Questions/after presentation</a></li>
-<li class="toc-entry toc-h1"><a href="#summary">Summary</a>
+<li class="toc-entry toc-h2"><a href="#Random-Values">Random Values </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#two-colleagues-of-mr-mort-came-by-to-discuss-their-lives-and-their-previous-work-experiences-they-discussed-the-importance-of-comp-sci-and-their-descision-relating-to-it">Two colleagues of Mr Mort came by to discuss their lives and their previous work experiences. They discussed the importance of Comp Sci, and their descision relating to it.</a></li>
+<li class="toc-entry toc-h4"><a href="#CollegeBoard-Example:-What-is-the-possible-range-of-values-for-answ3">CollegeBoard Example: What is the possible range of values for answ3 </a></li>
+<li class="toc-entry toc-h4"><a href="#Convert-the-following-procedure-to-Python,-then-determine-the-range-of-outputs-if-n-=-5.">Convert the following procedure to Python, then determine the range of outputs if n = 5. </a></li>
 </ul>
 </li>
-</ul><h1 id="kathyleen-beveridge-project-managements">
-<a class="anchor" href="#kathyleen-beveridge-project-managements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kathyleen Beveridge (Project Managements)</h1>
-<hr>
-
-<ul>
-  <li>She has a finance degree, did MBA at USC</li>
-  <li>Moved to San Diego 2004</li>
-  <li>She was a investment banker at wells fargo after college (stoke broker)</li>
-  <li>Her first high tech career was in HP</li>
-  <li>She moved to San Diego and started working for Qualcomm</li>
-  <li>Overall she worked for 3 companies so far (Qualcomm, HP, and Thermo Fisher Scientific)</li>
+<li class="toc-entry toc-h2"><a href="#Homework">Homework </a></li>
 </ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-12-12-randomvalues.ipynb
+-->
 
-<h2 id="company-mission-statements">
-<a class="anchor" href="#company-mission-statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Company Mission Statements</h2>
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<style>
+    .coolCode {
+        color: #FFFFFF;
+        font-family: monospace;
+        border: 1px solid #404040;
+        border-radius: 3px;
+        background-color: #212121;
+        padding: 1px 5px;
+        font-size: 20px
+    }
+</style>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="wget-https://raw.githubusercontent.com/aidenhuynh/CS_Swag/master/_notebooks/2022-11-30-randomvalues.ipynb">
+<a class="anchor" href="#wget-https://raw.githubusercontent.com/aidenhuynh/CS_Swag/master/_notebooks/2022-11-30-randomvalues.ipynb" aria-hidden="true"><span class="octicon octicon-link"></span></a>wget <a href="https://raw.githubusercontent.com/aidenhuynh/CS_Swag/master/_notebooks/2022-11-30-randomvalues.ipynb">https://raw.githubusercontent.com/aidenhuynh/CS_Swag/master/_notebooks/2022-11-30-randomvalues.ipynb</a><a class="anchor-link" href="#wget-https://raw.githubusercontent.com/aidenhuynh/CS_Swag/master/_notebooks/2022-11-30-randomvalues.ipynb"> </a>
+</h3>
+<h1 id="Libraries">
+<a class="anchor" href="#Libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Libraries<a class="anchor-link" href="#Libraries"> </a>
+</h1>
 <ul>
-  <li>“Create technology that makes better for everyone, everywhere” : HP</li>
-  <li>“Inventing the tech the world loves” : Qualcomm</li>
-  <li>Enable our customers to make the world healthier, cleaner and safer: Thermo Fisher Scientific</li>
+<li>A library is a collection of precompiled codes that can be used later on in a program for some specific well-defined operations. </li>
+<li>These precompiled codes can be referred to as modules. Each module contains bundles of code that can be used repeatedly in different programs.</li>
+<li>A library may also contain documentation, configuration data, message templates, classes, and values, etc.</li>
 </ul>
-
-<hr>
-<hr>
-
-<h1 id="kris-porter-developer-operation-software-engineer---sre-devops">
-<a class="anchor" href="#kris-porter-developer-operation-software-engineer---sre-devops" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kris Porter (Developer Operation, Software Engineer - SRE, DevOps)</h1>
-<hr>
-
+<h3 id="Why-are-libraries-important?">
+<a class="anchor" href="#Why-are-libraries-important?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why are libraries important?<a class="anchor-link" href="#Why-are-libraries-important?"> </a>
+</h3>
 <ul>
-  <li>Attended Livermore High School alum</li>
-  <li>Enrolled at UCLA for Electrical Engineering (masters degree)</li>
-  <li>Master’s Degree in Electrical Engineering from Cal State LA (Communications Systems)</li>
+<li>Using Libraries makes Python Programming simpler and convenient for the programmer. </li>
+<li>One example would be through looping and iteration, as we don’t need to write the same code again and again for different programs. </li>
+<li>Python libraries play a very vital role in fields of Machine Learning, Data Science, Data Visualization, etc.</li>
 </ul>
-
-<h2 id="research">
-<a class="anchor" href="#research" aria-hidden="true"><span class="octicon octicon-link"></span></a>Research</h2>
+<h3 id="A-few-libraries-that-simplify-coding-processes:">
+<a class="anchor" href="#A-few-libraries-that-simplify-coding-processes:" aria-hidden="true"><span class="octicon octicon-link"></span></a>A few libraries that simplify coding processes:<a class="anchor-link" href="#A-few-libraries-that-simplify-coding-processes:"> </a>
+</h3>
 <ul>
-  <li>Center for Embedded Networked Sensors(NIMS)</li>
-  <li>Introduced the linux Operating System, Software Development Life Cycle</li>
+<li>
+<strong>Pillow</strong> allows you to work with images.</li>
+<li>
+<strong>Tensor Flow</strong> helps with data automation and monitors performance.</li>
+<li>
+<strong>Matplotlib</strong> allows you to make 2D graphs and plots.</li>
 </ul>
-
-<h2 id="time-line">
-<a class="anchor" href="#time-line" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time Line</h2>
+<p>The AP Exam Refrence Sheet itself is a library!
+<img src="https://user-images.githubusercontent.com/51098969/206974627-af98327c-d95d-4459-be67-cbaa3faaaa98.jpg" alt="Screenshot 2022-12-11 221853"></p>
+<h2 id="Hacks:">
+<a class="anchor" href="#Hacks:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks:<a class="anchor-link" href="#Hacks:"> </a>
+</h2>
+<p>Research two other Python Libraries NOT DISCUSSED DURING LESSON and make a markdown post, explaining their function and how it helps programmers code.</p>
 <ul>
-  <li>2010 - Systems Engineer at a Start up, GPM (Email marketing automation)</li>
-  <li>NBC Universal, Streaming media Infastructures</li>
-  <li>2014 intro to DevOps, transition to Qualcomm</li>
-  <li>2021 Working at Twitter</li>
+<li>hashlib, pygame</li>
 </ul>
-
-<h2 id="continuous-learning---highlights">
-<a class="anchor" href="#continuous-learning---highlights" aria-hidden="true"><span class="octicon octicon-link"></span></a>Continuous Learning - highlights</h2>
+<h3 id="API’s">
+<a class="anchor" href="#API%E2%80%99s" aria-hidden="true"><span class="octicon octicon-link"></span></a>API’s<a class="anchor-link" href="#API%E2%80%99s"> </a>
+</h3>
 <ul>
-  <li>CCNA training</li>
-  <li>Machine Learning and Deep Learning (Qualcomm)</li>
-  <li>PYthon (Udemy)</li>
-  <li>Data structures Algorithms</li>
-  <li>System Design for Interviews</li>
-  <li>Twitter University</li>
+<li>An Application Program Interface, or API, contains specific direction for how the procedures in a library behave and can be used. </li>
+<li>An API acts as a gateway for the imported procedures from a library to interact with the rest of your code.</li>
 </ul>
-
-<h2 id="some-projects-he-worked-on">
-<a class="anchor" href="#some-projects-he-worked-on" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some Projects he worked on</h2>
+<h3 id="Activity:-Walkthrough-with-NumPy">
+<a class="anchor" href="#Activity:-Walkthrough-with-NumPy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Activity: Walkthrough with NumPy<a class="anchor-link" href="#Activity:-Walkthrough-with-NumPy"> </a>
+</h3>
 <ul>
-  <li>Streaming media Infastructure for the 2012 Olympic Games</li>
-  <li>
-<strong>Analytics infastructure</strong> projects (locationSmart, Qualcomm)</li>
-  <li>
-<strong>Twitter Projects</strong> (new Data Center Deployments)</li>
+<li>Install NumPy on VSCode:<ol>
+<li>Open New Terminal In VSCode:</li>
+<li>pip3 install --upgrade pip</li>
+<li>pip install numpy </li>
+</ol>
+</li>
 </ul>
+<p>REMEMBER: When running library code cells use Python Interpreter Conda (Version 3.9.12)</p>
+<h3 id="Example-of-using-NumPy-for-arrays:">
+<a class="anchor" href="#Example-of-using-NumPy-for-arrays:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of using NumPy for arrays:<a class="anchor-link" href="#Example-of-using-NumPy-for-arrays:"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<hr>
-<hr>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">new_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+ 
+<span class="nb">print</span> <span class="p">(</span><span class="n">new_matrix</span><span class="p">)</span>
+</pre></div>
 
-<h1 id="questionsafter-presentation">
-<a class="anchor" href="#questionsafter-presentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questions/after presentation</h1>
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Example-of-using-NumPy-for-derivatives:">
+<a class="anchor" href="#Example-of-using-NumPy-for-derivatives:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of using NumPy for derivatives:<a class="anchor-link" href="#Example-of-using-NumPy-for-derivatives:"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+ 
+<span class="c1"># defining polynomial function</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Polynomial function, f(x):</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+ 
+<span class="c1"># calculating the derivative</span>
+<span class="n">derivative</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">deriv</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Derivative, f(x)'="</span><span class="p">,</span> <span class="n">derivative</span><span class="p">)</span>
+ 
+<span class="c1"># calculates the derivative of after</span>
+<span class="c1"># given value of x</span>
+<span class="c1">#</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"When x=5  f(x)'="</span><span class="p">,</span> <span class="n">derivative</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Polynomial function, f(x):
+    2
+2 x + 1
+Derivative, f(x)'=  
+4 x
+When x=5  f(x)'= 20
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Random-Values">
+<a class="anchor" href="#Random-Values" aria-hidden="true"><span class="octicon octicon-link"></span></a>Random Values<a class="anchor-link" href="#Random-Values"> </a>
+</h2>
 <ul>
-  <li>Continuous learning, learning how to learn. Learning new coding languages</li>
-  <li>Being Adaptive, listening and understanding, and translating it towards the technology solving the requirements</li>
+<li>Random number generation (RNG) produces a random number (crazy right?)<ul>
+<li>This means that a procedure with RNG can return different values even if the parameters (inputs) do not change</li>
 </ul>
+</li>
+<li>CollegeBoard uses <code class="coolCode">RANDOM(A, B)</code>, to return an integer between integers <code class="coolCode">A</code> and <code class="coolCode">B</code>.<ul>
+<li>RANDOM(1, 10) can output 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10</li>
+<li>In Python, this would be <code class="coolCode">random.randint(A, B)</code>, after importing Python's "random" library (<code class="coolCode">import random</code>)</li>
+<li>JavaScript's works a little differently, with <code class="coolCode">Math.random()</code> returning a value between 0 and 1.<ul>
+<li>To match Python and CollegeBoard, you could make a procedure like <a href="https://stackoverflow.com/a/7228322">this</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="CollegeBoard-Example:-What-is-the-possible-range-of-values-for-answ3">
+<a class="anchor" href="#CollegeBoard-Example:-What-is-the-possible-range-of-values-for-answ3" aria-hidden="true"><span class="octicon octicon-link"></span></a>CollegeBoard Example: What is the possible range of values for <em>answ3</em><a class="anchor-link" href="#CollegeBoard-Example:-What-is-the-possible-range-of-values-for-answ3"> </a>
+</h4>
+<p><img src="https://i.ibb.co/Wt90Hbz/Screen-Shot-2022-12-12-at-7-27-58-AM.png" alt="CollegeBoard"></p>
 
-<hr>
-<hr>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Convert-the-following-procedure-to-Python,-then-determine-the-range-of-outputs-if-n-=-5.">
+<a class="anchor" href="#Convert-the-following-procedure-to-Python,-then-determine-the-range-of-outputs-if-n-=-5." aria-hidden="true"><span class="octicon octicon-link"></span></a>Convert the following procedure to Python, then determine the range of outputs if n = 5.<a class="anchor-link" href="#Convert-the-following-procedure-to-Python,-then-determine-the-range-of-outputs-if-n-=-5."> </a>
+</h4>
+<pre>
+<font color="white">
+PROCEDURE Dice(n)
+    sum ← 0
+    REPEAT UNTIL n = 0
+        sum ← sum + RANDOM(1, 6)
+        n ← n - 1
+    RETURN sum
+</font>
+</pre>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<h1 id="summary">
-<a class="anchor" href="#summary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary</h1>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="c1"># Fill in the blank</span>
 
-<h3 id="two-colleagues-of-mr-mort-came-by-to-discuss-their-lives-and-their-previous-work-experiences-they-discussed-the-importance-of-comp-sci-and-their-descision-relating-to-it">
-<a class="anchor" href="#two-colleagues-of-mr-mort-came-by-to-discuss-their-lives-and-their-previous-work-experiences-they-discussed-the-importance-of-comp-sci-and-their-descision-relating-to-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Two colleagues of Mr Mort came by to discuss their lives and their previous work experiences. They discussed the importance of Comp Sci, and their descision relating to it.</h3>
+<span class="k">def</span> <span class="nf">Dice</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">!=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+    
+<span class="n">Dice</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Will output a range of __ to __</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>21</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Homework">
+<a class="anchor" href="#Homework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework<a class="anchor-link" href="#Homework"> </a>
+</h2>
+<ol>
+<li>
+<p>Write a procedure that generates <em>n</em> random numbers, then sorts those numbers into lists of even and odd numbers (JS or Python, Python will be easier).</p>
+</li>
+<li>
+<p>Using NumPy and only coding in python cell, find the answer to the following questions:
+ a. What is the derivative of 2x^5 - 6x^2 + 24x?
+ b. What is the derivative of (13x^4 + 4x^2) / 2 when x = 9?</p>
+</li>
+<li>
+<p>Suppose you have a group of 10 dogs and 10 cats, and you want to create a random order for them. Show how random number generation could be used to create this random order.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">genSort</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+	<span class="n">tempList</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">evenList</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">oddList</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="c1"># loops and adds all the randomly generated numbers into temp list</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+		<span class="n">nums</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+		<span class="n">tempList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+	<span class="c1"># loops through the length of templist, and checks if the number position is even or odd and appends accordingly</span>
+	<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tempList</span><span class="p">)):</span>
+		<span class="c1"># Even</span>
+		<span class="k">if</span> <span class="n">tempList</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">%</span><span class="k">2</span> == 0:
+			<span class="n">evenList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tempList</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+			<span class="k">continue</span>
+		<span class="c1"># Odd</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">oddList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tempList</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+			<span class="k">continue</span>
+	<span class="c1"># prints odd list and even list</span>
+	<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tempList</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" List of Generated Nums"</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">evenList</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" List of Sorted Evens"</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">oddList</span><span class="p">)</span><span class="o">+</span> <span class="s2">" List of Sorted Odds"</span><span class="p">)</span>
+<span class="n">genSort</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[30, 6, 10, 6, 11, 26, 8, 2] List of Generated Nums
+[30, 6, 10, 6, 26, 8, 2] List of Sorted Evens
+[11] List of Sorted Odds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Define the polynomial</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+
+<span class="c1"># Calculate the derivative</span>
+<span class="n">deriv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyder</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
+
+<span class="c1"># Print the derivative</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deriv</span><span class="p">)</span>
+
+<span class="c1"># when x = 9</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"When x = 9  f'(x)="</span><span class="p">,</span> <span class="n">deriv</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>    3
+88 x + 14 x + 14
+When x = 9  f'(x)= 64292
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># List of animals (dogs and cats)</span>
+<span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'dog1'</span><span class="p">,</span> <span class="s1">'dog2'</span><span class="p">,</span> <span class="s1">'dog3'</span><span class="p">,</span> <span class="s1">'dog4'</span><span class="p">,</span> <span class="s1">'dog5'</span><span class="p">,</span> <span class="s1">'dog6'</span><span class="p">,</span> <span class="s1">'dog7'</span><span class="p">,</span> <span class="s1">'dog8'</span><span class="p">,</span> <span class="s1">'dog9'</span><span class="p">,</span> <span class="s1">'dog10'</span><span class="p">,</span> <span class="s1">'cat1'</span><span class="p">,</span> <span class="s1">'cat2'</span><span class="p">,</span> <span class="s1">'cat3'</span><span class="p">,</span> <span class="s1">'cat4'</span><span class="p">,</span> <span class="s1">'cat5'</span><span class="p">,</span> <span class="s1">'cat6'</span><span class="p">,</span> <span class="s1">'cat7'</span><span class="p">,</span> <span class="s1">'cat8'</span><span class="p">,</span> <span class="s1">'cat9'</span><span class="p">,</span> <span class="s1">'cat10'</span><span class="p">]</span>
+<span class="c1"># uses the shuffle function from the random library to shuffle the values in the list</span>
+<span class="n">newOrder</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+<span class="c1"># prints the new orderd list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['cat9', 'dog4', 'cat1', 'dog6', 'cat4', 'cat8', 'cat10', 'dog8', 'cat3', 'dog7', 'cat2', 'dog3', 'dog2', 'cat5', 'dog5', 'dog10', 'cat7', 'cat6', 'dog1', 'dog9']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
 
 
   </div><!-- from https://github.com/utterance/utterances -->

@@ -1,7 +1,7 @@
 ---
 keywords: fastai
 description: ""
-title: Compsci/technical buisness pannel
+title: Compsci Extra Credit Seminar
 toc: true
 branch: master
 badges: true
@@ -28,7 +28,7 @@ layout: notebook
 * Enable our customers to make the world healthier, cleaner and safer: Thermo Fisher Scientific
 
 
--a-------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 
 # Kris Porter (Developer Operation, Software Engineer - SRE, DevOps)
@@ -68,4 +68,9 @@ layout: notebook
 * Continuous learning, learning how to learn. Learning new coding languages
 * Being Adaptive, listening and understanding, and translating it towards the technology solving the requirements
 
+--------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 
+# Summary
+
+### Two colleagues of Mr Mort came by to discuss their lives and their previous work experiences. They discussed the importance of Comp Sci, and their descision relating to it.

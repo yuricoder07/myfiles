@@ -66,6 +66,6 @@ layout: notebook
 
 # Questions/after presentation
 * Continuous learning, learning how to learn. Learning new coding languages
-* Being Adaptive, listening and understanding, and translating it towards the technology solving the requirments
+* Being Adaptive, listening and understanding, and translating it towards the technology solving the requirements
 
 

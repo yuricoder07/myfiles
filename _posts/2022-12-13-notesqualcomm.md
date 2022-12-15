@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: CompSci Extra Credit
 categories: [markdown]
-title: CompSci Extra Credut Seminar
+title: CompSci Extra Credt Seminar
 ---
 
 # Kathyleen Beveridge (Project Managements)

@@ -621,22 +621,22 @@ Representation to Re-Create the object:
     
     <span class="c1">#age getter </span>
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">extracurricular</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">ages</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">_age</span>
     
     <span class="c1">#age setter</span>
-    <span class="nd">@extracurricular</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">extracurricular</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="nd">@ages</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">ages</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
         <span class="n">user</span><span class="o">.</span><span class="n">_age</span> <span class="o">=</span> <span class="n">age</span>
     
     <span class="c1">#description getter    </span>
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">hoursPerWeek</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">descriptions</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">_description</span>
     
     <span class="c1"># description setter</span>
-    <span class="nd">@hoursPerWeek</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">hoursPerWeek</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">description</span><span class="p">):</span>
+    <span class="nd">@descriptions</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">descriptions</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">description</span><span class="p">):</span>
         <span class="n">user</span><span class="o">.</span><span class="n">_age</span> <span class="o">=</span> <span class="n">description</span>
         
     <span class="c1"># output content using str(object) in human readable form, uses getter</span>

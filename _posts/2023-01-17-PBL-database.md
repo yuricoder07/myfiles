@@ -77,7 +77,7 @@ layout: notebook
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="sd">&quot;&quot;&quot; database dependencies to support sqliteDB examples &quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot; database dependencies to support sqliteDB examples &quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">__init__</span> <span class="kn">import</span> <span class="n">app</span><span class="p">,</span> <span class="n">db</span>
 <span class="kn">from</span> <span class="nn">sqlalchemy.exc</span> <span class="kn">import</span> <span class="n">IntegrityError</span>
@@ -116,6 +116,28 @@ layout: notebook
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/Users/yuri/vscode/myfiles/_notebooks/2023-01-17-PBL-database.ipynb Cell 6</span> in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-01-17-PBL-database.ipynb#W5sZmlsZQ%3D%3D?line=0&#39;&gt;1&lt;/a&gt;</span> &#34;&#34;&#34; database dependencies to support sqliteDB examples &#34;&#34;&#34;
+<span class="ansi-green-fg">----&gt; &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-01-17-PBL-database.ipynb#W5sZmlsZQ%3D%3D?line=2&#39;&gt;3&lt;/a&gt;</span> from __init__ import app, db
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-01-17-PBL-database.ipynb#W5sZmlsZQ%3D%3D?line=3&#39;&gt;4&lt;/a&gt;</span> from sqlalchemy.exc import IntegrityError
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-01-17-PBL-database.ipynb#W5sZmlsZQ%3D%3D?line=4&#39;&gt;5&lt;/a&gt;</span> from werkzeug.security import generate_password_hash, check_password_hash
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;__init__&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -134,7 +156,7 @@ layout: notebook
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># creates a person object from User(db.Model) class, passes initializers</span>
         <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>  <span class="c1"># add prepares to persist person object to Users table</span>
@@ -281,7 +303,7 @@ flask_portfolio-web-1  <span class="p">|</span> <span class="o">[</span><span cl
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="kn">from</span> <span class="nn">flask_login</span> <span class="kn">import</span> <span class="n">LoginManager</span>
 <span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
 <span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span>

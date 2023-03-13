@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Mon Mar  6 10:47:49 2023
+
+# Make data base, printed on Sun Mar 12 22:35:36 2023
 
 # Variables
 
@@ -138,9 +141,10 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/yuri/opt/anaconda3
 # environment
-VSCODE_PID = 97394
+VSCODE_PID = 30114
 # environment
 _CE_CONDA = 
+ 
 # environment
 LANG = C
 # variable set hash-table stats:
@@ -152,9 +156,9 @@ LANG = C
 
 # Directories
 
-# . (device 16777220, inode 27099200): 36 files, no impossibilities.
+# . (device 16777220, inode 27099200): 37 files, no impossibilities.
 
-# 36 files, no impossibilities in 1 directories.
+# 37 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -251,6 +255,7 @@ quick-build: .FORCE
 	
 
 restart-jekyll: .FORCE
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -309,8 +314,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Mar  6 10:47:49 2023
+# Finished Make data base on Sun Mar 12 22:35:36 2023
 
  
-make: *** No rule to make target `all'.  Stop.
-

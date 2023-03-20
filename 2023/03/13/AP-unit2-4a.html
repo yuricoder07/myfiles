@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      13 min read
     
 </span></p>
 
@@ -183,8 +183,10 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on where you have observed these working?  Provide a defintion of purpose.<ol>
-<li>Flask app object</li>
-<li>SQLAlchemy db object</li>
+<li>Flask app object
+ I see this working on the line where it says 'app = Flask(name)'. Which sets up the flask object</li>
+<li>SQLAlchemy db object
+ I see this on the line where it says 'db= SQLAlchemy()'. The purpose is to create properties in the db.</li>
 </ol>
 </li>
 </ul>
@@ -213,7 +215,7 @@ window.onload = wrap_img;
 <span class="c1"># Setup of key Flask object (app)</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="c1"># Setup SQLAlchemy object and properties for the database (db)</span>
-<span class="n">database</span> <span class="o">=</span> <span class="s1">'sqlite:///files/sqlite.db'</span>  <span class="c1"># path and filename of database</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">'sqlite:///computers.db'</span>  <span class="c1"># path and filename of database</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_TRACK_MODIFICATIONS'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="n">database</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SECRET_KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'SECRET_KEY'</span>
@@ -242,14 +244,12 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on these items in the class, purpose and defintion.<ul>
-<li>class User</li>
-<li>db.Model inheritance</li>
+<li>class User:Creates the template to make an object    - db.Model inheritance: Crease the SQLite table and database</li>
 <li>
-<em>init</em> method</li>
+<em>init</em> method: This is the constructer of the object, which allows it to create</li>
 <li>
-<code>@property</code>, <code>@&lt;column&gt;.setter</code>
-</li>
-<li>create, read, update, delete methods</li>
+<code>@property</code>, <code>@&lt;column&gt;.setter</code>: @property helps establish the values, while @colum.setter changes the values inputted.</li>
+<li>create, read, update, delete methods: CRUD, in the name, create: adds stuff to the db. read: reads the values in the Database. Update: updates values in the database. Delete: deletes values in the Database.</li>
 </ul>
 </li>
 </ul>
@@ -264,7 +264,31 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">""" database dependencies to support sqlite examples """</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""</span>
+<span class="sd">These imports define the key objects</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+
+<span class="sd">"""</span>
+<span class="sd">These object and definitions are used throughout the Jupyter Notebook.</span>
+<span class="sd">"""</span>
+
+<span class="c1"># Setup of key Flask object (app)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="c1"># Setup SQLAlchemy object and properties for the database (db)</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">'sqlite:///computers.db'</span>  <span class="c1"># path and filename of database</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_TRACK_MODIFICATIONS'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="n">database</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SECRET_KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'SECRET_KEY'</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">()</span>
+
+
+<span class="c1"># This belongs in place where it runs once per project</span>
+<span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="sd">""" database dependencies to support sqlite examples """</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -280,83 +304,139 @@ window.onload = wrap_img;
 <span class="c1"># -- a.) db.Model is like an inner layer of the onion in ORM</span>
 <span class="c1"># -- b.) User represents data we want to store, something that is built on db.Model</span>
 <span class="c1"># -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL</span>
-<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'users'</span>  <span class="c1"># table name is plural, class name is singular</span>
+<span class="k">class</span> <span class="nc">Computers</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'computers'</span>  <span class="c1"># table name is plural, class name is singular</span>
 
     <span class="c1"># Define the User schema with "vars" from object</span>
     <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">_name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">_uid</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">_password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">_dob</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Date</span><span class="p">)</span>
+    <span class="n">_name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_graphics</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_CPU</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_price</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_RAM</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_storage</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_OS</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_brand</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_year</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
     <span class="c1"># constructor of a User object, initializes the instance variables within object (self)</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"123qwerty"</span><span class="p">,</span> <span class="n">dob</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">CPU</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">RAM</span><span class="p">,</span> <span class="n">storage</span><span class="p">,</span> <span class="n">OS</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>    <span class="c1"># variables with self prefix become part of the object, </span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">=</span> <span class="n">uid</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dob</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># not a date type     </span>
-            <span class="n">dob</span> <span class="o">=</span> <span class="n">date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span> <span class="o">=</span> <span class="n">dob</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graphics</span> <span class="o">=</span> <span class="n">graphics</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_CPU</span> <span class="o">=</span> <span class="n">CPU</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_price</span> <span class="o">=</span> <span class="n">price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_RAM</span> <span class="o">=</span> <span class="n">RAM</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_storage</span> <span class="o">=</span> <span class="n">storage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_OS</span> <span class="o">=</span> <span class="n">OS</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_brand</span> <span class="o">=</span> <span class="n">brand</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_year</span> <span class="o">=</span> <span class="n">year</span>
 
     <span class="c1"># a name getter method, extracts name from object</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
     
-    <span class="c1"># a setter function, allows name to be updated after initial object creation</span>
+    <span class="c1"># a name setter method, sets name in object</span>
     <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
-    
-    <span class="c1"># a getter method, extracts uid from object</span>
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">uid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span>
-    
-    <span class="c1"># a setter function, allows uid to be updated after initial object creation</span>
-    <span class="nd">@uid</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">uid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">=</span> <span class="n">uid</span>
-        
-    <span class="c1"># check if uid parameter matches user id in object, return boolean</span>
-    <span class="k">def</span> <span class="nf">is_uid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">==</span> <span class="n">uid</span>
-    
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"..."</span> <span class="c1"># because of security only show 1st characters</span>
 
-    <span class="c1"># update password, this is conventional method used for setter</span>
-    <span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
-        <span class="sd">"""Create a hashed password."""</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_password</span> <span class="o">=</span> <span class="n">generate_password_hash</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'sha256'</span><span class="p">)</span>
+    <span class="c1"># a graphics getter method, extracts graphics from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">graphics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graphics</span>
+    
+    <span class="c1"># a graphics setter method, sets graphics in object</span>
+    <span class="nd">@graphics</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">graphics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graphics</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graphics</span> <span class="o">=</span> <span class="n">graphics</span>
 
-    <span class="c1"># check password parameter against stored/encrypted password</span>
-    <span class="k">def</span> <span class="nf">is_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
-        <span class="sd">"""Check against hashed password."""</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">check_password_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">result</span>
-    
-    <span class="c1"># dob property is returned as string, a string represents date outside object</span>
+    <span class="c1"># a CPU getter method, extracts CPU from object</span>
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">dob</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">dob_string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%m-</span><span class="si">%d</span><span class="s1">-%Y'</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">dob_string</span>
+    <span class="k">def</span> <span class="nf">CPU</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CPU</span>
     
-    <span class="c1"># dob setter, verifies date type before it is set or default to today</span>
-    <span class="nd">@dob</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">dob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dob</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dob</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># not a date type     </span>
-            <span class="n">dob</span> <span class="o">=</span> <span class="n">date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span> <span class="o">=</span> <span class="n">dob</span>
+    <span class="c1"># a CPU setter method, sets CPU in object</span>
+    <span class="nd">@CPU</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">CPU</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">CPU</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_CPU</span> <span class="o">=</span> <span class="n">CPU</span>
     
-    <span class="c1"># age is calculated field, age is returned according to date of birth</span>
+    <span class="c1"># a price getter method, extracts price from object</span>
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_price</span>
     
+    <span class="c1"># a price setter method, sets price in object</span>
+    <span class="nd">@price</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">price</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_price</span> <span class="o">=</span> <span class="n">price</span>
+
+    <span class="c1"># a RAM getter method, extracts RAM from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">RAM</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_RAM</span>
+    
+    <span class="c1"># a RAM setter method, sets RAM in object</span>
+    <span class="nd">@RAM</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">RAM</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">RAM</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_RAM</span> <span class="o">=</span> <span class="n">RAM</span>
+    
+    <span class="c1"># a storage getter method, extracts storage from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">storage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_storage</span>
+    
+    <span class="c1"># a storage setter method, sets storage in object</span>
+    <span class="nd">@storage</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">storage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storage</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_storage</span> <span class="o">=</span> <span class="n">storage</span>
+    
+    <span class="c1"># a OS getter method, extracts OS from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">OS</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_OS</span>
+    
+    <span class="c1"># a OS setter method, sets OS in object</span>
+    <span class="nd">@OS</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">OS</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">OS</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_OS</span> <span class="o">=</span> <span class="n">OS</span>
+    
+    <span class="c1"># a brand getter method, extracts brand from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">brand</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_brand</span>
+    
+    <span class="c1"># a brand setter method, sets brand in object</span>
+    <span class="nd">@brand</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">brand</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">brand</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_brand</span> <span class="o">=</span> <span class="n">brand</span>
+
+    <span class="c1"># a year getter method, extracts year from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">year</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_year</span>
+    
+    <span class="c1"># a year setter method, sets year in object</span>
+    <span class="nd">@year</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">year</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_year</span> <span class="o">=</span> <span class="n">year</span>
+    
+    <span class="c1"># a method to return a dictionary of the object</span>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"id"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">"graphics"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphics</span><span class="p">,</span>
+            <span class="s2">"CPU"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">CPU</span><span class="p">,</span>
+            <span class="s2">"price"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+            <span class="s2">"RAM"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">RAM</span><span class="p">,</span>
+            <span class="s2">"storage"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span>
+            <span class="s2">"OS"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">OS</span><span class="p">,</span>
+            <span class="s2">"brand"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="p">,</span>
+            <span class="s2">"year"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+        <span class="p">}</span>
+            
+
     <span class="c1"># output content using str(object) is in human readable form</span>
     <span class="c1"># output content using json dumps, this is ready for API response</span>
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -373,28 +453,60 @@ window.onload = wrap_img;
         <span class="k">except</span> <span class="n">IntegrityError</span><span class="p">:</span>
             <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
             <span class="k">return</span> <span class="kc">None</span>
-
+    <span class="k">def</span> <span class="nf">check_price</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    
     <span class="c1"># CRUD read converts self to dictionary</span>
     <span class="c1"># returns dictionary</span>
     <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span>          
             <span class="s2">"id"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
             <span class="s2">"name"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="s2">"uid"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span>
-            <span class="s2">"dob"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dob</span><span class="p">,</span>
-            <span class="s2">"age"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">,</span>
+            <span class="s2">"graphics"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">graphics</span><span class="p">,</span>
+            <span class="s2">"CPU"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">CPU</span><span class="p">,</span>
+            <span class="s2">"price"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+            <span class="s2">"RAM"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">RAM</span><span class="p">,</span>
+            <span class="s2">"storage"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage</span><span class="p">,</span>
+            <span class="s2">"OS"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">OS</span><span class="p">,</span>
+            <span class="s2">"brand"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">brand</span><span class="p">,</span>
+            <span class="s2">"year"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
         <span class="p">}</span>
 
     <span class="c1"># CRUD update: updates user name, password, phone</span>
     <span class="c1"># returns self</span>
-    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">graphics</span><span class="p">,</span> <span class="n">CPU</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">RAM</span><span class="p">,</span> <span class="n">storage</span><span class="p">,</span> <span class="n">OS</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
         <span class="sd">"""only updates values with length"""</span>
+        
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">uid</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">graphics</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">graphics</span> <span class="o">=</span> <span class="n">graphics</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">CPU</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">CPU</span> <span class="o">=</span> <span class="n">CPU</span>
+        
+        <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+        
+        <span class="k">if</span> <span class="n">RAM</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">RAM</span> <span class="o">=</span> <span class="n">RAM</span>
+        
+        <span class="k">if</span> <span class="n">storage</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">storage</span> <span class="o">=</span> <span class="n">storage</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">OS</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">OS</span> <span class="o">=</span> <span class="n">OS</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">brand</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">brand</span> <span class="o">=</span> <span class="n">brand</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        
         <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span>
 
@@ -404,7 +516,6 @@ window.onload = wrap_img;
         <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
         <span class="k">return</span> <span class="kc">None</span>
-    
 </pre></div>
 
     </div>
@@ -425,8 +536,7 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on how these work?<ol>
-<li>Create All Tables from db Object</li>
-<li>User Object Constructors</li>
+<li>Create All Tables from db Object:works through db.create_all()    2. User Object Constructors: </li>
 <li>Try / Except </li>
 </ol>
 </li>
@@ -446,32 +556,38 @@ window.onload = wrap_img;
 
 
 <span class="c1"># Builds working data for testing</span>
-<span class="k">def</span> <span class="nf">initUsers</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">initComputers</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="sd">"""Create database and tables"""</span>
         <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
         <span class="sd">"""Tester data for table"""</span>
-        <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Thomas Edison'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'toby'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123toby'</span><span class="p">,</span> <span class="n">dob</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1847</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
-        <span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Nikola Tesla'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'niko'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123niko'</span><span class="p">)</span>
-        <span class="n">u3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Alexander Graham Bell'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'lex'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123lex'</span><span class="p">)</span>
-        <span class="n">u4</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Eli Whitney'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'whit'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123whit'</span><span class="p">)</span>
-        <span class="n">u5</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Indiana Jones'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'indi'</span><span class="p">,</span> <span class="n">dob</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
-        <span class="n">u6</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Marion Ravenwood'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'raven'</span><span class="p">,</span> <span class="n">dob</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1921</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+        <span class="n">c1</span> <span class="o">=</span> <span class="n">Computers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'MacBook Pro'</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="s1">'Intel Iris Plus Graphics 645'</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="s1">'2.3GHz 8-core 9th-generation Intel Core i9 processor, Turbo Boost up to 4.8GHz'</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mi">2799</span><span class="p">,</span> <span class="n">RAM</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">storage</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">OS</span><span class="o">=</span><span class="s1">'macOS Catalina'</span><span class="p">,</span> <span class="n">brand</span><span class="o">=</span><span class="s1">'Apple'</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s1">'2019'</span><span class="p">)</span>
+        <span class="n">c2</span> <span class="o">=</span> <span class="n">Computers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Dell XPS 13"</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="s2">"Intel UHD Graphics 620"</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="s2">"2.8GHz 8th Generation Intel Core i7-8565U Processor"</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mi">1299</span><span class="p">,</span> <span class="n">RAM</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">storage</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">OS</span><span class="o">=</span><span class="s2">"Windows 10 Home"</span><span class="p">,</span> <span class="n">brand</span><span class="o">=</span><span class="s2">"Dell"</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s2">"2019"</span><span class="p">)</span>
+        <span class="n">c3</span> <span class="o">=</span> <span class="n">Computers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Hp Dragonfly'</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="s1">'Intel UHD Graphics'</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="s1">'Intel i3-1215U'</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mf">1039.00</span><span class="p">,</span> <span class="n">RAM</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">storage</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">OS</span><span class="o">=</span><span class="s1">'Windows 10 Home'</span><span class="p">,</span> <span class="n">brand</span><span class="o">=</span><span class="s1">'Hp'</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s1">'2019'</span><span class="p">)</span>
+        <span class="n">c4</span> <span class="o">=</span> <span class="n">Computers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Gigabyte Aero 15 Oled 4k'</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="s1">'3060'</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="s1">'i7 11 gen'</span><span class="p">,</span> <span class="n">price</span> <span class="o">=</span><span class="mi">1440</span><span class="p">,</span> <span class="n">RAM</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">storage</span> <span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">OS</span> <span class="o">=</span> <span class="s1">'Windows 10'</span><span class="p">,</span><span class="n">brand</span> <span class="o">=</span> <span class="s1">'Gigabyte'</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="s1">'2020'</span><span class="p">)</span>
+        <span class="n">c5</span> <span class="o">=</span> <span class="n">Computers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'MacBook Air'</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="s1">'Intel UHD'</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="s1">'intel i5'</span><span class="p">,</span> <span class="n">price</span> <span class="o">=</span><span class="mi">1220</span><span class="p">,</span> <span class="n">RAM</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">storage</span> <span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">OS</span> <span class="o">=</span> <span class="s1">'Mac OS'</span><span class="p">,</span><span class="n">brand</span> <span class="o">=</span> <span class="s1">'Apple'</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="s1">'2020'</span><span class="p">)</span>
+        <span class="n">c6</span> <span class="o">=</span> <span class="n">Computers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Lenovo Thinkpad X1 Extreme'</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="s1">'Nvidia Quadro P2000'</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="s1">'Intel Core i7-9750H'</span><span class="p">,</span> <span class="n">price</span> <span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">RAM</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">storage</span> <span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">OS</span> <span class="o">=</span> <span class="s1">'Windows 10'</span><span class="p">,</span><span class="n">brand</span> <span class="o">=</span> <span class="s1">'Lenovo'</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="s1">'2020'</span><span class="p">)</span>
+        <span class="n">c7</span> <span class="o">=</span> <span class="n">Computers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"Acer Nitro 5"</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="s2">"Nvidia GeForce RTX 3070ti"</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="s2">"Intel Core i7-12700H"</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">RAM</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">storage</span><span class="o">=</span><span class="mi">2048</span><span class="p">,</span> <span class="n">OS</span><span class="o">=</span><span class="s2">"Windows 11 Home"</span><span class="p">,</span> <span class="n">brand</span><span class="o">=</span><span class="s2">"Acer"</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s2">"2022"</span><span class="p">)</span>
 
-
-        <span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span><span class="p">,</span> <span class="n">u4</span><span class="p">,</span> <span class="n">u5</span><span class="p">,</span> <span class="n">u6</span><span class="p">]</span>
+        <span class="n">Comps</span> <span class="o">=</span> <span class="p">[</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">,</span> <span class="n">c4</span><span class="p">,</span> <span class="n">c5</span><span class="p">,</span> <span class="n">c6</span><span class="p">,</span> <span class="n">c7</span><span class="p">]</span>
 
         <span class="sd">"""Builds sample user/note(s) data"""</span>
-        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">Computer</span> <span class="ow">in</span> <span class="n">Comps</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="sd">'''add user to table'''</span>
-                <span class="nb">object</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Created new uid </span><span class="si">{</span><span class="nb">object</span><span class="o">.</span><span class="n">uid</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+                <span class="nb">object</span> <span class="o">=</span> <span class="n">Computer</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Created new record </span><span class="si">{</span><span class="n">Computer</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             <span class="k">except</span><span class="p">:</span>  <span class="c1"># error raised if object nit created</span>
                 <span class="sd">'''fails with bad or duplicate data'''</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Records exist uid </span><span class="si">{</span><span class="n">user</span><span class="o">.</span><span class="n">uid</span><span class="si">}</span><span class="s2">, or error."</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Records exist uid </span><span class="si">{</span><span class="n">Computer</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, or error."</span><span class="p">)</span>
                 
-<span class="n">initUsers</span><span class="p">()</span>
+<span class="n">initComputers</span><span class="p">()</span>
+
+<span class="c1"># SQLAlchemy extracts single user from database matching User ID</span>
+<span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="n">computer</span> <span class="o">=</span> <span class="n">Computers</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">computer</span> <span class="c1"># returns user object</span>
 </pre></div>
 
     </div>
@@ -484,12 +600,12 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Records exist uid toby, or error.
-Records exist uid niko, or error.
-Records exist uid lex, or error.
-Records exist uid whit, or error.
-Records exist uid indi, or error.
-Records exist uid raven, or error.
+<pre>Created new uid toby
+Created new uid niko
+Created new uid lex
+Created new uid whit
+Created new uid indi
+Created new uid raven
 </pre>
 </div>
 </div>
@@ -520,38 +636,6 @@ Records exist uid raven, or error.
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_by_uid</span><span class="p">(</span><span class="n">uid</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
-        <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">_uid</span><span class="o">=</span><span class="n">uid</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">user</span> <span class="c1"># returns user object</span>
-
-<span class="c1"># Check credentials by finding user and verify password</span>
-<span class="k">def</span> <span class="nf">check_credentials</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
-    <span class="c1"># query email and return user record</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">find_by_uid</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">is_password</span><span class="p">(</span><span class="n">password</span><span class="p">)):</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="kc">False</span>
-        
-<span class="c1">#check_credentials("indi", "123qwerty")</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -583,39 +667,29 @@ Records exist uid raven, or error.
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create</span><span class="p">():</span>
     <span class="c1"># optimize user time to see if uid exists</span>
-    <span class="n">uid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your user id:"</span><span class="p">)</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">find_by_uid</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Found</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-        <span class="k">return</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">pass</span> <span class="c1"># keep going</span>
-    
-    <span class="c1"># request value that ensure creating valid object</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your name:"</span><span class="p">)</span>
-    <span class="n">password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your password"</span><span class="p">)</span>
-    
-    <span class="c1"># Initialize User object before date</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> 
-                <span class="n">uid</span><span class="o">=</span><span class="n">uid</span><span class="p">,</span> 
-                <span class="n">password</span><span class="o">=</span><span class="n">password</span>
-                <span class="p">)</span>
-    
-    <span class="c1"># create user.dob, fail with today as dob</span>
-    <span class="n">dob</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your date of birth 'YYYY-MM-DD'"</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">user</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">dob</span><span class="p">,</span> <span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="n">user</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Invalid date </span><span class="si">{</span><span class="n">dob</span><span class="si">}</span><span class="s2"> require YYYY-mm-dd, date defaulted to </span><span class="si">{</span><span class="n">user</span><span class="o">.</span><span class="n">dob</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-           
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the name of your computer:"</span><span class="p">)</span>
+    <span class="n">graphics</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the graphics of your computer:"</span><span class="p">)</span>
+    <span class="n">CPU</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the CPU of your computer:"</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the price of your computer (integer):"</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+    <span class="n">RAM</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the RAM of your computer (integer):"</span><span class="p">)</span>
+    <span class="n">RAM</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">RAM</span><span class="p">)</span>
+    <span class="n">storage</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the storage of your computer (integer):"</span><span class="p">)</span>
+    <span class="n">storage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">storage</span><span class="p">)</span>
+    <span class="n">OS</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the OS of your computer:"</span><span class="p">)</span>
+    <span class="n">brand</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the brand of your computer:"</span><span class="p">)</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the year of your computer:"</span><span class="p">)</span>
+
+        <span class="c1"># Initialize User object before date</span>
+    <span class="n">comp</span> <span class="o">=</span> <span class="n">Computers</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="n">graphics</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="n">CPU</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="n">price</span><span class="p">,</span> <span class="n">RAM</span><span class="o">=</span><span class="n">RAM</span><span class="p">,</span> <span class="n">storage</span><span class="o">=</span><span class="n">storage</span><span class="p">,</span> <span class="n">OS</span><span class="o">=</span><span class="n">OS</span><span class="p">,</span> <span class="n">brand</span><span class="o">=</span><span class="n">brand</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span>
+       
     <span class="c1"># write object to database</span>
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="nb">object</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+            <span class="nb">object</span> <span class="o">=</span> <span class="n">comp</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"Created</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
         <span class="k">except</span><span class="p">:</span>  <span class="c1"># error raised if object not created</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"Unknown error uid </span><span class="si">{uid}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Unknown error occurred, or duplicate data."</span><span class="p">)</span>
         
 <span class="n">create</span><span class="p">()</span>
 </pre></div>
@@ -669,11 +743,10 @@ Records exist uid raven, or error.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># SQLAlchemy extracts all users from database, turns each user into JSON</span>
-<span class="k">def</span> <span class="nf">read</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">read</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
-        <span class="n">table</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">table</span><span class="p">]</span> <span class="c1"># "List Comprehensions", for each user add user.read() to list</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">Computers</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">computer</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">computer</span> <span class="ow">in</span> <span class="n">table</span><span class="p">]</span> <span class="c1"># "List Comprehensions", for each user add user.read() to list</span>
     <span class="k">return</span> <span class="n">json_ready</span>
 
 <span class="n">read</span><span class="p">()</span>
@@ -699,17 +772,17 @@ Records exist uid raven, or error.
  {'id': 2,
   'name': 'Nikola Tesla',
   'uid': 'niko',
-  'dob': '03-14-2023',
+  'dob': '03-15-2023',
   'age': 0},
  {'id': 3,
   'name': 'Alexander Graham Bell',
   'uid': 'lex',
-  'dob': '03-14-2023',
+  'dob': '03-15-2023',
   'age': 0},
  {'id': 4,
   'name': 'Eli Whitney',
   'uid': 'whit',
-  'dob': '03-14-2023',
+  'dob': '03-15-2023',
   'age': 0},
  {'id': 5,
   'name': 'Indiana Jones',
@@ -720,12 +793,165 @@ Records exist uid raven, or error.
   'name': 'Marion Ravenwood',
   'uid': 'raven',
   'dob': '10-21-1921',
-  'age': 101},
- {'id': 7, 'name': 'Yuri', 'uid': '7', 'dob': '01-03-2007', 'age': 16}]</pre>
+  'age': 101}]</pre>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">():</span>
+    <span class="c1"># Gets the ID</span>
+    <span class="n">DComp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the computer id to be deleted:"</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="c1"># Gets the user through the ID</span>
+        <span class="n">ComputerDelete</span> <span class="o">=</span> <span class="n">Computers</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">DComp</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ComputerDelete</span><span class="p">:</span>
+            <span class="c1"># Deletes the user according to its ID number</span>
+            <span class="n">ComputerDelete</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Computer with id </span><span class="si">{</span><span class="n">DComp</span><span class="si">}</span><span class="s2"> deleted"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Error message if delete fails</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Computer  with id </span><span class="si">{</span><span class="n">DComp</span><span class="si">}</span><span class="s2"> not found"</span><span class="p">)</span>
+    
+<span class="n">delete</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the name of your computer:"</span><span class="p">)</span>
+    <span class="n">graphics</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the graphics of your computer:"</span><span class="p">)</span>
+    <span class="n">CPU</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the CPU of your computer:"</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the price of your computer (integer):"</span><span class="p">))</span>
+    <span class="n">RAM</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the RAM of your computer (integer):"</span><span class="p">))</span>
+    <span class="n">storage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the storage of your computer (integer):"</span><span class="p">))</span>
+    <span class="n">OS</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the OS of your computer:"</span><span class="p">)</span>
+    <span class="n">brand</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the brand of your computer:"</span><span class="p">)</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter the year of your computer:"</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Name is required"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">graphics</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Graphics is required"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">CPU</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"CPU is required"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">price</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Price is required"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">RAM</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"RAM is required"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">storage</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Storage is required"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">OS</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"OS is required"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">brand</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Brand is required"</span><span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="s2">"Year is required"</span><span class="p">}</span>
+    
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="c1"># Gets the user through the ID</span>
+        <span class="n">ComputerUpdate</span> <span class="o">=</span> <span class="n">Computers</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">_name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">ComputerUpdate</span><span class="p">:</span>
+            <span class="n">ComputerUpdate</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">graphics</span><span class="o">=</span><span class="n">graphics</span><span class="p">,</span> <span class="n">CPU</span><span class="o">=</span><span class="n">CPU</span><span class="p">,</span> <span class="n">price</span><span class="o">=</span><span class="n">price</span><span class="p">,</span> <span class="n">RAM</span><span class="o">=</span><span class="n">RAM</span><span class="p">,</span> <span class="n">storage</span><span class="o">=</span><span class="n">storage</span><span class="p">,</span> <span class="n">OS</span><span class="o">=</span><span class="n">OS</span><span class="p">,</span> <span class="n">brand</span><span class="o">=</span><span class="n">brand</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="p">)</span> 
+
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Computer with id </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> updated"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Error message if delete fails</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Computer  with id </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> not found"</span><span class="p">)</span>
+
+<span class="n">update</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb Cell 15</span> in <span class="ansi-cyan-fg">&lt;cell line: 42&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=37'&gt;38&lt;/a&gt;</span>         else:
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=38'&gt;39&lt;/a&gt;</span>             # Error message if delete fails
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=39'&gt;40&lt;/a&gt;</span>             print(f"Computer  with id {name} not found")
+<span class="ansi-green-fg">---&gt; &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=41'&gt;42&lt;/a&gt;</span> update()
+
+<span class="ansi-green-intense-fg ansi-bold">/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb Cell 15</span> in <span class="ansi-cyan-fg">update</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=2'&gt;3&lt;/a&gt;</span> graphics = input("Enter the graphics of your computer:")
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=3'&gt;4&lt;/a&gt;</span> CPU = input("Enter the CPU of your computer:")
+<span class="ansi-green-fg">----&gt; &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=4'&gt;5&lt;/a&gt;</span> price = int(input("Enter the price of your computer (integer):"))
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=5'&gt;6&lt;/a&gt;</span> RAM = int(input("Enter the RAM of your computer (integer):"))
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-03-13-AP-unit2-4a.ipynb#X22sZmlsZQ%3D%3D?line=6'&gt;7&lt;/a&gt;</span> storage = int(input("Enter the storage of your computer (integer):"))
+
+<span class="ansi-red-fg">ValueError</span>: invalid literal for int() with base 10: ''</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+    <span class="n">operation</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter: (C)reate (R)ead (U)pdate or (D)elete"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'c'</span><span class="p">:</span>
+        <span class="n">create</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'r'</span><span class="p">:</span>
+        <span class="n">read</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'u'</span><span class="p">:</span>
+        <span class="n">update</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'d'</span><span class="p">:</span>
+        <span class="n">delete</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c1"># Escape Key</span>
+        <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Please enter c, r, u, or d"</span><span class="p">)</span> 
+    <span class="n">menu</span><span class="p">()</span> <span class="c1"># recursion, repeat menu</span>
+        
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">menu</span><span class="p">()</span> <span class="c1"># start menu</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Perform Jupyter 'Run All' prior to starting menu"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      14 min read
+      15 min read
     
 </span></p>
 
@@ -536,8 +536,8 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>Comment on how these work?<ol>
-<li>Create All Tables from db Object:works through db.create_all()    2. User Object Constructors: </li>
-<li>Try / Except </li>
+<li>Create All Tables from db Object:works through db.create_all()    2. User Object Constructors: Goes through the Computer() class with the proper parameters</li>
+<li>Try / Except : Try works by attempting to create each object. If it doesn't work, except takes charge, removes the faulty object, and displays an error message.</li>
 </ol>
 </li>
 </ul>
@@ -628,8 +628,7 @@ Created new record Acer Nitro 5
 </blockquote>
 <ul>
 <li>Comment on purpose of following<ol>
-<li>User.query.filter_by</li>
-<li>user.password</li>
+<li>User.query.filter_by:Filters through the data to find and match the uid in the functions parameters.    2. user.password: Checks to see if there is a cooresponding password to username</li>
 </ol>
 </li>
 </ul>
@@ -648,10 +647,9 @@ Created new record Acer Nitro 5
 </blockquote>
 <ul>
 <li>Comment on purpose of following<ol>
-<li>user.find_by_uid() and try/except</li>
-<li>user = User(...)</li>
-<li>user.dob and try/except</li>
-<li>user.create() and try/except</li>
+<li>user.find_by_uid() and try/except:Finds to see if there is already an existing uid that is the same as the inputted uid. Try stops the code if the same uid already exists. If there is no currently existing inputted uid, except makes the code continue running.    2. user = User(...): Creates the User object.</li>
+<li>user.dob and try/except: user.dob is the inputted dob. Try sets the dob in the following format. Except sets it to today and returns and error message if the date isn't inputted correctly.</li>
+<li>user.create() and try/except: Creates the User object. Try creates the user. Except returns an error message if no object is created.</li>
 </ol>
 </li>
 </ul>

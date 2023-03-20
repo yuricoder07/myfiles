@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      8 min read
     
 </span></p>
 
@@ -165,11 +165,11 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses PRAGMA statement to read schema.</p>
 </blockquote>
-<p>Describe Schema, here is resource <a href="https://www.sqlite.org/index.html">Resource</a>- What is a database schema?</p>
+<p>Describe Schema, here is resource <a href="https://www.sqlite.org/index.html">Resource</a>- What is a database schema?: A database schema dictates how data is organized, such as with tables, fields, JSON, etc.</p>
 <ul>
-<li>What is the purpose of identity Column in SQL database?</li>
-<li>What is the purpose of a primary key in SQL database?</li>
-<li>What are the Data Types in SQL table?</li>
+<li>What is the purpose of identity Column in SQL database?:The identity column helps identify different profiles in the database. It is unique to every profile, so it makes it able to distinguish users in the data.</li>
+<li>What is the purpose of a primary key in SQL database?:The purpose of the primary key is to make the data unique. This allows each profile in the data to be distinguishable from each other.</li>
+<li>What are the Data Types in SQL table?:Exact numbers, approximate numbers, date and time, character strings, unicode character strings, binary strings, etc.</li>
 </ul>
 
 </div>
@@ -242,10 +242,9 @@ window.onload = wrap_img;
 <p>Uses SQL SELECT statement to read data</p>
 </blockquote>
 <ul>
-<li>What is a connection object?  After you google it, what do you think it does?</li>
-<li>Same for cursor object?</li>
-<li>Look at conn object and cursor object in VSCode debugger.  What attributes are in the object?</li>
-<li>Is "results" an object?  How do you know?</li>
+<li>What is a connection object?  After you google it, what do you think it does?A connection object represents each SQLite database. I think it is responsible for connecting to the database so it can create cursor objects and transaction control.</li>
+<li>Same for cursor object?:Yes, cursor object allows the use of commands, and also fetches the data.- Look at conn object and cursor object in VSCode debugger.  What attributes are in the object?:conn.cursor() has attributes of special variables, function variables, class variables, in_transaction, isolation_level, row_factory, and total_changes. For the objects, all of the attributes say "none."</li>
+<li>Is "results" an object?  How do you know?:"Results can be an object because it prints out the entire database. I know this because in the debugger is has the [()] thing with all the rows and data in it.</li>
 </ul>
 
 </div>
@@ -319,8 +318,7 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQL INSERT to add row</p>
 <ul>
-<li>Compore create() in both SQL lessons.  What is better or worse in the two implementations?</li>
-<li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?</li>
+<li>Compore create() in both SQL lessons.  What is better or worse in the two implementations?:Imperative:Has less code and is easier to work with than OOP. However, it is unable to check for garbage data such as in gradDate.- OOP: Has slightly more code and is somewhat harder to work with(less functions used). However, it is able to check for garbage data.-  Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?:SQL INSERT inserts the profile into the table(sqlite.db) with the parameters entered. It is the same as init.</li>
 </ul>
 </blockquote>
 
@@ -398,9 +396,8 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQL UPDATE to modify password</p>
 <ul>
-<li>What does the hacked part do?</li>
-<li>Explain try/except, when would except occur?</li>
-<li>What code seems to be repeated in each of these examples to point, why is it repeated?</li>
+<li>What does the hacked part do?:If the new password inputted is less than 2 characters, the code detects it as a hack and a new password is automatically created for you.- Explain try/except, when would except occur? : Try attempts to execute the code under it. If there is an error with executing the code, except occurs and executes the below code. This is useful because you can write code that continues to run even after hitting a problem or error.</li>
+<li>What code seems to be repeated in each of these examples to point, why is it repeated?: The code conn.cursor, cursor.execute, conn.commit, and cursor/conn.close is repeated. It is repeated because it constantly has to set up a cursor object and connection object. It has to be executed in order to do any actions, and must close at the end so that the code can end.</li>
 </ul>
 </blockquote>
 
@@ -467,8 +464,7 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses a delete function to remove a user based on a user input of the id.</p>
 <ul>
-<li>Is DELETE a dangerous operation?  Why?</li>
-<li>In the print statemements, what is the "f" and what does {uid} do?</li>
+<li>Is DELETE a dangerous operation?  Why?:It is dangerous because once you delete an object, the object is gone forever.- In the print statemements, what is the "f" and what does {uid} do?: 'f' makes the variables in the {var} available to use. Without 'f', {var} would not work. {uid} is the string that is fetched from the database, it displays the uid being deleted.</li>
 </ul>
 </blockquote>
 
@@ -528,8 +524,7 @@ window.onload = wrap_img;
 <blockquote>
 <p>CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell.</p>
 <ul>
-<li>Why does the menu repeat?</li>
-<li>Could you refactor this menu?  Make it work with a List?</li>
+<li>Why does the menu repeat? :The menu repeats because the code never runs into an error.- Could you refactor this menu?  Make it work with a List? : Yes. it could be CRUD = [c,r,u,d]</li>
 </ul>
 </blockquote>
 

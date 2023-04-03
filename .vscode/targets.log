@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sun Apr  2 22:15:18 2023
+# Make data base, printed on Mon Apr  3 08:33:57 2023
 
 # Variables
 
@@ -23,9 +23,9 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
+ 
 @F = $(notdir $@)
 # makefile
- 
 CURDIR := /Users/yuri/vscode/myfiles
 # makefile
 SHELL = /bin/sh
@@ -135,7 +135,6 @@ CONDA_PYTHON_EXE = /Users/yuri/opt/anaconda3/bin/python
 SUFFIXES := 
 # environment
 _CE_M = 
- 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -151,6 +150,7 @@ LANG = C
 # variable set hash-table stats:
 # Load=66/1024=6%, Rehash=0, Collisions=2/90=2%
 
+ 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
@@ -212,7 +212,6 @@ server-detached: .FORCE
 Makefile:
 #  Implicit rule search has been done.
 #  Last modified 2022-10-06 14:49:44
- 
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -304,6 +303,7 @@ convert: .FORCE
 
 # files hash-table stats:
 # Load=16/1024=2%, Rehash=0, Collisions=0/38=0%
+ 
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -315,6 +315,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Apr  2 22:15:18 2023
+# Finished Make data base on Mon Apr  3 08:33:57 2023
 
  

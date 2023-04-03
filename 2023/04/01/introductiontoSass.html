@@ -125,12 +125,23 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Variables">Variables </a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#Variables-in-CSS-preprocessors-such-as-Sass-allow-you-to-store-information-that-you-can-reuse-in-your-stylesheet,-such-as-font-stacks,-colors,-or-any-other-CSS-value-you-anticipate-needing.-The-$-symbol-is-used-in-Sass-to-designate-a-variable.">Variables in CSS preprocessors such as Sass allow you to store information that you can reuse in your stylesheet, such as font stacks, colors, or any other CSS value you anticipate needing. The $ symbol is used in Sass to designate a variable. </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#Sass">Sass </a></li>
-<li class="toc-entry toc-h1"><a href="#Css">Css </a>
+<li class="toc-entry toc-h2"><a href="#Sass">Sass </a></li>
+<li class="toc-entry toc-h2"><a href="#Css">Css </a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-$font-stack-and-$primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website.">Once Sass is processed, it generates standard CSS by inserting the values we assigned to variables such as $font-stack and $primary-color. This functionality can prove invaluable when dealing with brand colors and ensuring their consistency throughout the website. </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Nesting">Nesting </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable.">While composing HTML, you might have observed that it exhibits an explicit nested and visual structure. However, CSS lacks such a hierarchy. On the contrary, Sass allows you to nest your CSS selectors in a manner that aligns with the visual hierarchy of your HTML. Nonetheless, excessive nesting may generate overly qualified CSS, which can be challenging to maintain and is usually considered undesirable. </a></li>
+<li class="toc-entry toc-h2"><a href="#Sass">Sass </a></li>
+<li class="toc-entry toc-h2"><a href="#Css">Css </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability.">As you observe, the ul, li, and a selectors are enclosed within the nav selector. This approach is highly beneficial in arranging your CSS and enhancing its readability. </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><!--
@@ -173,9 +184,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Sass">
+<h2 id="Sass">
 <a class="anchor" href="#Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass<a class="anchor-link" href="#Sass"> </a>
-</h1>
+</h2>
 <pre><code>$font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
@@ -183,15 +194,65 @@ body {
   font: 100% $font-stack;
   color: $primary-color;
 }</code></pre>
-<h1 id="Css">
+<h2 id="Css">
 <a class="anchor" href="#Css" aria-hidden="true"><span class="octicon octicon-link"></span></a>Css<a class="anchor-link" href="#Css"> </a>
-</h1>
+</h2>
 <pre><code>body {
   font: 100% Helvetica, sans-serif;
   color: #333;
 }</code></pre>
 <h4 id="Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-$font-stack-and-$primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website.">
 <a class="anchor" href="#Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-%24font-stack-and-%24primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website." aria-hidden="true"><span class="octicon octicon-link"></span></a>Once Sass is processed, it generates standard CSS by inserting the values we assigned to variables such as <code>$font-stack</code> and <code>$primary-color</code>. This functionality can prove invaluable when dealing with brand colors and ensuring their consistency throughout the website.<a class="anchor-link" href="#Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-%24font-stack-and-%24primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website."> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Nesting">
+<a class="anchor" href="#Nesting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nesting<a class="anchor-link" href="#Nesting"> </a>
+</h1>
+<h4 id="While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable.">
+<a class="anchor" href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable." aria-hidden="true"><span class="octicon octicon-link"></span></a>While composing HTML, you might have observed that it exhibits an explicit nested and visual structure. However, CSS lacks such a hierarchy. On the contrary, Sass allows you to nest your CSS selectors in a manner that aligns with the visual hierarchy of your HTML. Nonetheless, excessive nesting may generate overly qualified CSS, which can be challenging to maintain and is usually considered undesirable.<a class="anchor-link" href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable."> </a>
+</h4>
+<p>Keeping this in consideration, here's a sample of common styles for a website's navigation:</p>
+<h2 id="Sass">
+<a class="anchor" href="#Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass<a class="anchor-link" href="#Sass"> </a>
+</h2>
+<pre><code>nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}</code></pre>
+<h2 id="Css">
+<a class="anchor" href="#Css" aria-hidden="true"><span class="octicon octicon-link"></span></a>Css<a class="anchor-link" href="#Css"> </a>
+</h2>
+<pre><code>nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}</code></pre>
+<h4 id="As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability.">
+<a class="anchor" href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability." aria-hidden="true"><span class="octicon octicon-link"></span></a>As you observe, the ul, li, and a selectors are enclosed within the nav selector. This approach is highly beneficial in arranging your CSS and enhancing its readability.<a class="anchor-link" href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability."> </a>
 </h4>
 </div>
 </div>

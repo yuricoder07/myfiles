@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -136,10 +136,17 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Nesting">Nesting </a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable.">While composing HTML, you might have observed that it exhibits an explicit nested and visual structure. However, CSS lacks such a hierarchy. On the contrary, Sass allows you to nest your CSS selectors in a manner that aligns with the visual hierarchy of your HTML. Nonetheless, excessive nesting may generate overly qualified CSS, which can be challenging to maintain and is usually considered undesirable. </a></li>
+<li class="toc-entry toc-h4"><a href="#Keeping-this-in-consideration,-here's-a-sample-of-common-styles-for-a-website's-navigation:##-Sass">Keeping this in consideration, here&#39;s a sample of common styles for a website&#39;s navigation:## Sass </a></li>
+<li class="toc-entry toc-h4"><a href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability.">As you observe, the ul, li, and a selectors are enclosed within the nav selector. This approach is highly beneficial in arranging your CSS and enhancing its readability. </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Modules">Modules </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#It-is-not-mandatory-to-write-all-of-your-Sass-code-in-a-single-file.-You-can-divide-it-into-multiple-files-as-per-your-preference-by-utilizing-the-"@use"-rule.-This-rule-imports-another-Sass-file-as-a-module,-enabling-you-to-reference-its-variables,-mixins,-and-functions-in-your-Sass-code-using-a-namespace-derived-from-the-file-name.-Additionally,-by-using-a-file,-the-CSS-it-produces-will-also-be-included-in-the-compiled-output.">It is not mandatory to write all of your Sass code in a single file. You can divide it into multiple files as per your preference by utilizing the &quot;@use&quot; rule. This rule imports another Sass file as a module, enabling you to reference its variables, mixins, and functions in your Sass code using a namespace derived from the file name. Additionally, by using a file, the CSS it produces will also be included in the compiled output. </a></li>
 <li class="toc-entry toc-h2"><a href="#Sass">Sass </a></li>
 <li class="toc-entry toc-h2"><a href="#Css">Css </a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability.">As you observe, the ul, li, and a selectors are enclosed within the nav selector. This approach is highly beneficial in arranging your CSS and enhancing its readability. </a></li>
+<li class="toc-entry toc-h4"><a href="#Observe-that-in-the-styles.scss-file,-we-are-employing-"@use-'base';".-If-you-utilize-a-file,-there's-no-requirement-to-add-the-file-extension.-Sass-is-intelligent-enough-to-comprehend-it-by-itself.">Observe that in the styles.scss file, we are employing &quot;@use &#39;base&#39;;&quot;. If you utilize a file, there&#39;s no requirement to add the file extension. Sass is intelligent enough to comprehend it by itself. </a></li>
 </ul>
 </li>
 </ul>
@@ -159,10 +166,12 @@ window.onload = wrap_img;
 <h1 id="What-is-SASS?">
 <a class="anchor" href="#What-is-SASS?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is SASS?<a class="anchor-link" href="#What-is-SASS?"> </a>
 </h1>
+<blockquote>
 <h4 id="Sass-is-a-preprocessor-language-that's-interpreted-into-CSS.-A-preprocessor-language-takes-input-data-and-converts-it-to-an-output-that's-used-as-input-by-another-program.-This-means-when-you-run-Sass-code,-you're-actually-converting-your-code-to-CSS.-That-CSS-code-output-is-then-used-directly-by-a-browser.">
 <a class="anchor" href="#Sass-is-a-preprocessor-language-that's-interpreted-into-CSS.-A-preprocessor-language-takes-input-data-and-converts-it-to-an-output-that's-used-as-input-by-another-program.-This-means-when-you-run-Sass-code,-you're-actually-converting-your-code-to-CSS.-That-CSS-code-output-is-then-used-directly-by-a-browser." aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass is a preprocessor language that's interpreted into CSS. A preprocessor language takes input data and converts it to an output that's used as input by another program. This means when you run Sass code, you're actually converting your code to CSS. That CSS code output is then used directly by a browser.<a class="anchor-link" href="#Sass-is-a-preprocessor-language-that's-interpreted-into-CSS.-A-preprocessor-language-takes-input-data-and-converts-it-to-an-output-that's-used-as-input-by-another-program.-This-means-when-you-run-Sass-code,-you're-actually-converting-your-code-to-CSS.-That-CSS-code-output-is-then-used-directly-by-a-browser."> </a>
 </h4>
 <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMd7eiGMX9FwRLC0uJTDewSjw_7_WvCF4ABLdwztLrCnPEXrqW0gG-pH8eT-fYPLlghjY&amp;usqp=CAU" alt=""></p>
+</blockquote>
 
 </div>
 </div>
@@ -173,10 +182,12 @@ window.onload = wrap_img;
 <h1 id="Variables">
 <a class="anchor" href="#Variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables<a class="anchor-link" href="#Variables"> </a>
 </h1>
+<blockquote>
 <h4 id="Variables-in-CSS-preprocessors-such-as-Sass-allow-you-to-store-information-that-you-can-reuse-in-your-stylesheet,-such-as-font-stacks,-colors,-or-any-other-CSS-value-you-anticipate-needing.-The-$-symbol-is-used-in-Sass-to-designate-a-variable.">
 <a class="anchor" href="#Variables-in-CSS-preprocessors-such-as-Sass-allow-you-to-store-information-that-you-can-reuse-in-your-stylesheet,-such-as-font-stacks,-colors,-or-any-other-CSS-value-you-anticipate-needing.-The-%24-symbol-is-used-in-Sass-to-designate-a-variable." aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables in CSS preprocessors such as Sass allow you to store information that you can reuse in your stylesheet, such as font stacks, colors, or any other CSS value you anticipate needing. The $ symbol is used in Sass to designate a variable.<a class="anchor-link" href="#Variables-in-CSS-preprocessors-such-as-Sass-allow-you-to-store-information-that-you-can-reuse-in-your-stylesheet,-such-as-font-stacks,-colors,-or-any-other-CSS-value-you-anticipate-needing.-The-%24-symbol-is-used-in-Sass-to-designate-a-variable."> </a>
 </h4>
 <p>Below is an example:</p>
+</blockquote>
 
 </div>
 </div>
@@ -201,9 +212,12 @@ body {
   font: 100% Helvetica, sans-serif;
   color: #333;
 }</code></pre>
+<blockquote>
 <h4 id="Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-$font-stack-and-$primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website.">
 <a class="anchor" href="#Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-%24font-stack-and-%24primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website." aria-hidden="true"><span class="octicon octicon-link"></span></a>Once Sass is processed, it generates standard CSS by inserting the values we assigned to variables such as <code>$font-stack</code> and <code>$primary-color</code>. This functionality can prove invaluable when dealing with brand colors and ensuring their consistency throughout the website.<a class="anchor-link" href="#Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-%24font-stack-and-%24primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website."> </a>
 </h4>
+</blockquote>
+
 </div>
 </div>
 </div>
@@ -213,32 +227,32 @@ body {
 <h1 id="Nesting">
 <a class="anchor" href="#Nesting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nesting<a class="anchor-link" href="#Nesting"> </a>
 </h1>
+<blockquote>
 <h4 id="While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable.">
 <a class="anchor" href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable." aria-hidden="true"><span class="octicon octicon-link"></span></a>While composing HTML, you might have observed that it exhibits an explicit nested and visual structure. However, CSS lacks such a hierarchy. On the contrary, Sass allows you to nest your CSS selectors in a manner that aligns with the visual hierarchy of your HTML. Nonetheless, excessive nesting may generate overly qualified CSS, which can be challenging to maintain and is usually considered undesirable.<a class="anchor-link" href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable."> </a>
 </h4>
-<p>Keeping this in consideration, here's a sample of common styles for a website's navigation:</p>
-<h2 id="Sass">
-<a class="anchor" href="#Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass<a class="anchor-link" href="#Sass"> </a>
-</h2>
-<pre><code>nav {
+<h4 id="Keeping-this-in-consideration,-here's-a-sample-of-common-styles-for-a-website's-navigation:##-Sass">
+<a class="anchor" href="#Keeping-this-in-consideration,-here's-a-sample-of-common-styles-for-a-website's-navigation:##-Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Keeping this in consideration, here's a sample of common styles for a website's navigation:## Sass<a class="anchor-link" href="#Keeping-this-in-consideration,-here's-a-sample-of-common-styles-for-a-website's-navigation:##-Sass"> </a>
+</h4>
+<p>```
+nav {
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-
-  li { display: inline-block; }
-
-  a {
+  }</p>
+</blockquote>
+<p>li { display: inline-block; }</p>
+<p>a {
     display: block;
     padding: 6px 12px;
     text-decoration: none;
   }
-}</code></pre>
-<h2 id="Css">
-<a class="anchor" href="#Css" aria-hidden="true"><span class="octicon octicon-link"></span></a>Css<a class="anchor-link" href="#Css"> </a>
-</h2>
-<pre><code>nav ul {
+}</p>
+
+<pre><code>
+## Css</code></pre>
+<p>nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -250,10 +264,64 @@ nav a {
   display: block;
   padding: 6px 12px;
   text-decoration: none;
-}</code></pre>
+}
+```</p>
+<blockquote>
 <h4 id="As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability.">
 <a class="anchor" href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability." aria-hidden="true"><span class="octicon octicon-link"></span></a>As you observe, the ul, li, and a selectors are enclosed within the nav selector. This approach is highly beneficial in arranging your CSS and enhancing its readability.<a class="anchor-link" href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability."> </a>
 </h4>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Modules">
+<a class="anchor" href="#Modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modules<a class="anchor-link" href="#Modules"> </a>
+</h1>
+<blockquote>
+<h4 id='It-is-not-mandatory-to-write-all-of-your-Sass-code-in-a-single-file.-You-can-divide-it-into-multiple-files-as-per-your-preference-by-utilizing-the-"@use"-rule.-This-rule-imports-another-Sass-file-as-a-module,-enabling-you-to-reference-its-variables,-mixins,-and-functions-in-your-Sass-code-using-a-namespace-derived-from-the-file-name.-Additionally,-by-using-a-file,-the-CSS-it-produces-will-also-be-included-in-the-compiled-output.'>
+<a class="anchor" href="#It-is-not-mandatory-to-write-all-of-your-Sass-code-in-a-single-file.-You-can-divide-it-into-multiple-files-as-per-your-preference-by-utilizing-the-" aria-hidden="true"><span class="octicon octicon-link"></span></a>It is not mandatory to write all of your Sass code in a single file. You can divide it into multiple files as per your preference by utilizing the "@use" rule. This rule imports another Sass file as a module, enabling you to reference its variables, mixins, and functions in your Sass code using a namespace derived from the file name. Additionally, by using a file, the CSS it produces will also be included in the compiled output.<a class="anchor-link" href="#It-is-not-mandatory-to-write-all-of-your-Sass-code-in-a-single-file.-You-can-divide-it-into-multiple-files-as-per-your-preference-by-utilizing-the-%22@use%22-rule.-This-rule-imports-another-Sass-file-as-a-module,-enabling-you-to-reference-its-variables,-mixins,-and-functions-in-your-Sass-code-using-a-namespace-derived-from-the-file-name.-Additionally,-by-using-a-file,-the-CSS-it-produces-will-also-be-included-in-the-compiled-output."> </a>
+</h4>
+</blockquote>
+<h2 id="Sass">
+<a class="anchor" href="#Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass<a class="anchor-link" href="#Sass"> </a>
+</h2>
+<pre><code>// _base.scss
+$font-stack:Helvetica, sans-serif;$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}</code></pre>
+
+<pre><code>// styles.scss
+@use 'base';
+
+.inverse {
+  background-color: base.$primary-color;
+  color: white;
+}</code></pre>
+<h2 id="Css">
+<a class="anchor" href="#Css" aria-hidden="true"><span class="octicon octicon-link"></span></a>Css<a class="anchor-link" href="#Css"> </a>
+</h2>
+<pre><code>body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+
+.inverse {
+  background-color: #333;
+  color: white;
+}</code></pre>
+<blockquote>
+<h4 id="Observe-that-in-the-styles.scss-file,-we-are-employing-&quot;@use-'base';&quot;.-If-you-utilize-a-file,-there's-no-requirement-to-add-the-file-extension.-Sass-is-intelligent-enough-to-comprehend-it-by-itself.">
+<a class="anchor" href="#Observe-that-in-the-styles.scss-file,-we-are-employing-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Observe that in the styles.scss file, we are employing "@use 'base';". If you utilize a file, there's no requirement to add the file extension. Sass is intelligent enough to comprehend it by itself.<a class="anchor-link" href="#Observe-that-in-the-styles.scss-file,-we-are-employing-%22@use-'base';%22.-If-you-utilize-a-file,-there's-no-requirement-to-add-the-file-extension.-Sass-is-intelligent-enough-to-comprehend-it-by-itself."> </a>
+</h4>
+</blockquote>
+
 </div>
 </div>
 </div>

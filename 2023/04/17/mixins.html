@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Functions in SASS | Yuri’s Blog APCSP 2022-2023</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Functions in SASS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Understanding Mixins in SASS" />
+<meta property="og:description" content="Understanding Mixins in SASS" />
+<link rel="canonical" href="https://yuricoder07.github.io/myfiles/2023/04/17/mixins.html" />
+<meta property="og:url" content="https://yuricoder07.github.io/myfiles/2023/04/17/mixins.html" />
+<meta property="og:site_name" content="Yuri’s Blog APCSP 2022-2023" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-17T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Functions in SASS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-17T00:00:00-05:00","datePublished":"2023-04-17T00:00:00-05:00","description":"Understanding Mixins in SASS","headline":"Functions in SASS","mainEntityOfPage":{"@type":"WebPage","@id":"https://yuricoder07.github.io/myfiles/2023/04/17/mixins.html"},"url":"https://yuricoder07.github.io/myfiles/2023/04/17/mixins.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/myfiles/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://yuricoder07.github.io/myfiles/feed.xml" title="Yuri's Blog | APCSP 2022-2023" /><link rel="shortcut icon" type="image/x-icon" href="/myfiles/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/myfiles/">Yuri&#39;s Blog | APCSP 2022-2023</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/myfiles/notes/">CSP Notes</a><a class="page-link" href="/myfiles/_pages/Submenue.html">Submenu</a><a class="page-link" href="/myfiles/about/">About Me</a><a class="page-link" href="/myfiles/search/">Search</a><a class="page-link" href="/myfiles/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Functions in SASS</h1><p class="page-description">Understanding Mixins in SASS</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-17T00:00:00-05:00" itemprop="datePublished">
+        Apr 17, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/yuricoder07/myfiles/tree/master/_notebooks/2023-04-17-mixins.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/myfiles/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/yuricoder07/myfiles/master?filepath=_notebooks%2F2023-04-17-mixins.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/myfiles/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/yuricoder07/myfiles/blob/master/_notebooks/2023-04-17-mixins.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/myfiles/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fyuricoder07%2Fmyfiles%2Fblob%2Fmaster%2F_notebooks%2F2023-04-17-mixins.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/myfiles/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#What-are-Mixins?">What are Mixins? </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#In-SASS,-mixins-are-a-way-to-define-a-set-of-CSS-rules-that-can-be-reused-in-different-parts-of-your-code.-Mixins-are-defined-using-the-@mixin-directive,-followed-by-a-name-and-a-set-of-CSS-rules.-Here's-an-example-of-a-simple-mixin:">In SASS, mixins are a way to define a set of CSS rules that can be reused in different parts of your code. Mixins are defined using the @mixin directive, followed by a name and a set of CSS rules. Here&#39;s an example of a simple mixin: </a></li>
+<li class="toc-entry toc-h4"><a href="#This-mixin-defines-a-set-of-CSS-rules-for-a-box-shadow,-and-takes-a-parameter-$shadow-that-can-be-used-to-customize-the-shadow.">This mixin defines a set of CSS rules for a box shadow, and takes a parameter $shadow that can be used to customize the shadow. </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Using-Mixins">Using Mixins </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#To-use-a-mixin-in-your-code,-you-can-include-it-using-the-@include-directive,-followed-by-the-name-of-the-mixin.-Here's-an-example:">To use a mixin in your code, you can include it using the @include directive, followed by the name of the mixin. Here&#39;s an example: </a></li>
+<li class="toc-entry toc-h4"><a href="#This-will-add-a-box-shadow-to-the-.button-element-using-the-rules-defined-in-the-box-shadow-mixin.">This will add a box shadow to the .button element using the rules defined in the box-shadow mixin. </a></li>
+<li class="toc-entry toc-h4"><a href="#Mixins-can-also-take-arguments,-which-allow-you-to-customize-the-rules-defined-in-the-mixin.-Here's-an-example-of-a-mixin-that-takes-two-arguments:">Mixins can also take arguments, which allow you to customize the rules defined in the mixin. Here&#39;s an example of a mixin that takes two arguments: </a></li>
+<li class="toc-entry toc-h4"><a href="#This-mixin-defines-a-set-of-CSS-rules-for-a-gradient,-and-takes-two-parameters:-$start-and-$end,-which-are-used-to-define-the-start-and-end-colors-of-the-gradient.">This mixin defines a set of CSS rules for a gradient, and takes two parameters: $start and $end, which are used to define the start and end colors of the gradient. </a></li>
+<li class="toc-entry toc-h4"><a href="#To-use-this-mixin,-you-can-pass-the-arguments-when-you-include-the-mixin,-like-this:">To use this mixin, you can pass the arguments when you include the mixin, like this: </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Conclusion">Conclusion </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Mixins-are-a-powerful-feature-of-SASS-that-allow-you-to-define-reusable-pieces-of-CSS-code-that-can-be-included-in-different-parts-of-your-code.-By-using-mixins,-you-can-write-less-code-and-make-your-CSS-more-modular-and-maintainable.-With-the-ability-to-take-arguments,-mixins-become-even-more-powerful,-allowing-you-to-create-highly-customizable-pieces-of-CSS-code.">Mixins are a powerful feature of SASS that allow you to define reusable pieces of CSS code that can be included in different parts of your code. By using mixins, you can write less code and make your CSS more modular and maintainable. With the ability to take arguments, mixins become even more powerful, allowing you to create highly customizable pieces of CSS code. </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-04-17-mixins.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>SASS is a CSS preprocessor that extends the functionality of CSS by adding features like variables, nesting, and mixins. Mixins are an important feature of SASS that allow you to define reusable pieces of CSS code that can be included in different parts of your code. In this lesson, we'll take a closer look at mixins in SASS and learn how to use them.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-are-Mixins?">
+<a class="anchor" href="#What-are-Mixins?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are Mixins?<a class="anchor-link" href="#What-are-Mixins?"> </a>
+</h2>
+<blockquote>
+<h4 id="In-SASS,-mixins-are-a-way-to-define-a-set-of-CSS-rules-that-can-be-reused-in-different-parts-of-your-code.-Mixins-are-defined-using-the-@mixin-directive,-followed-by-a-name-and-a-set-of-CSS-rules.-Here's-an-example-of-a-simple-mixin:">
+<a class="anchor" href="#In-SASS,-mixins-are-a-way-to-define-a-set-of-CSS-rules-that-can-be-reused-in-different-parts-of-your-code.-Mixins-are-defined-using-the-@mixin-directive,-followed-by-a-name-and-a-set-of-CSS-rules.-Here's-an-example-of-a-simple-mixin:" aria-hidden="true"><span class="octicon octicon-link"></span></a>In SASS, mixins are a way to define a set of CSS rules that can be reused in different parts of your code. Mixins are defined using the @mixin directive, followed by a name and a set of CSS rules. Here's an example of a simple mixin:<a class="anchor-link" href="#In-SASS,-mixins-are-a-way-to-define-a-set-of-CSS-rules-that-can-be-reused-in-different-parts-of-your-code.-Mixins-are-defined-using-the-@mixin-directive,-followed-by-a-name-and-a-set-of-CSS-rules.-Here's-an-example-of-a-simple-mixin:"> </a>
+</h4>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<h4 id="This-mixin-defines-a-set-of-CSS-rules-for-a-box-shadow,-and-takes-a-parameter-$shadow-that-can-be-used-to-customize-the-shadow.">
+<a class="anchor" href="#This-mixin-defines-a-set-of-CSS-rules-for-a-box-shadow,-and-takes-a-parameter-%24shadow-that-can-be-used-to-customize-the-shadow." aria-hidden="true"><span class="octicon octicon-link"></span></a>This mixin defines a set of CSS rules for a box shadow, and takes a parameter $shadow that can be used to customize the shadow.<a class="anchor-link" href="#This-mixin-defines-a-set-of-CSS-rules-for-a-box-shadow,-and-takes-a-parameter-%24shadow-that-can-be-used-to-customize-the-shadow."> </a>
+</h4>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-Mixins">
+<a class="anchor" href="#Using-Mixins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Mixins<a class="anchor-link" href="#Using-Mixins"> </a>
+</h2>
+<blockquote>
+<h4 id="To-use-a-mixin-in-your-code,-you-can-include-it-using-the-@include-directive,-followed-by-the-name-of-the-mixin.-Here's-an-example:">
+<a class="anchor" href="#To-use-a-mixin-in-your-code,-you-can-include-it-using-the-@include-directive,-followed-by-the-name-of-the-mixin.-Here's-an-example:" aria-hidden="true"><span class="octicon octicon-link"></span></a>To use a mixin in your code, you can include it using the <code>@include</code> directive, followed by the name of the mixin. Here's an example:<a class="anchor-link" href="#To-use-a-mixin-in-your-code,-you-can-include-it-using-the-@include-directive,-followed-by-the-name-of-the-mixin.-Here's-an-example:"> </a>
+</h4>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>.button {
+  @include box-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<h4 id="This-will-add-a-box-shadow-to-the-.button-element-using-the-rules-defined-in-the-box-shadow-mixin.">
+<a class="anchor" href="#This-will-add-a-box-shadow-to-the-.button-element-using-the-rules-defined-in-the-box-shadow-mixin." aria-hidden="true"><span class="octicon octicon-link"></span></a>This will add a box shadow to the <code>.button</code> element using the rules defined in the box-shadow mixin.<a class="anchor-link" href="#This-will-add-a-box-shadow-to-the-.button-element-using-the-rules-defined-in-the-box-shadow-mixin."> </a>
+</h4>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Mixins with Arguments</p>
+<blockquote>
+<h4 id="Mixins-can-also-take-arguments,-which-allow-you-to-customize-the-rules-defined-in-the-mixin.-Here's-an-example-of-a-mixin-that-takes-two-arguments:">
+<a class="anchor" href="#Mixins-can-also-take-arguments,-which-allow-you-to-customize-the-rules-defined-in-the-mixin.-Here's-an-example-of-a-mixin-that-takes-two-arguments:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mixins can also take arguments, which allow you to customize the rules defined in the mixin. Here's an example of a mixin that takes two arguments:<a class="anchor-link" href="#Mixins-can-also-take-arguments,-which-allow-you-to-customize-the-rules-defined-in-the-mixin.-Here's-an-example-of-a-mixin-that-takes-two-arguments:"> </a>
+</h4>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>@mixin gradient($start, $end) {
+  background: linear-gradient(to bottom, $start, $end);
+}</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="This-mixin-defines-a-set-of-CSS-rules-for-a-gradient,-and-takes-two-parameters:-$start-and-$end,-which-are-used-to-define-the-start-and-end-colors-of-the-gradient.">
+<a class="anchor" href="#This-mixin-defines-a-set-of-CSS-rules-for-a-gradient,-and-takes-two-parameters:-%24start-and-%24end,-which-are-used-to-define-the-start-and-end-colors-of-the-gradient." aria-hidden="true"><span class="octicon octicon-link"></span></a>This mixin defines a set of CSS rules for a gradient, and takes two parameters: <code>$start</code> and $end, which are used to define the start and end colors of the gradient.<a class="anchor-link" href="#This-mixin-defines-a-set-of-CSS-rules-for-a-gradient,-and-takes-two-parameters:-%24start-and-%24end,-which-are-used-to-define-the-start-and-end-colors-of-the-gradient."> </a>
+</h4>
+<h4 id="To-use-this-mixin,-you-can-pass-the-arguments-when-you-include-the-mixin,-like-this:">
+<a class="anchor" href="#To-use-this-mixin,-you-can-pass-the-arguments-when-you-include-the-mixin,-like-this:" aria-hidden="true"><span class="octicon octicon-link"></span></a>To use this mixin, you can pass the arguments when you include the mixin, like this:<a class="anchor-link" href="#To-use-this-mixin,-you-can-pass-the-arguments-when-you-include-the-mixin,-like-this:"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>.header {
+  @include gradient(#FF0000, #00FF00);
+}</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will add a gradient background to the .header element, using the start color #FF0000 and the end color #00FF00.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">
+<a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
+</h2>
+<blockquote>
+<h4 id="Mixins-are-a-powerful-feature-of-SASS-that-allow-you-to-define-reusable-pieces-of-CSS-code-that-can-be-included-in-different-parts-of-your-code.-By-using-mixins,-you-can-write-less-code-and-make-your-CSS-more-modular-and-maintainable.-With-the-ability-to-take-arguments,-mixins-become-even-more-powerful,-allowing-you-to-create-highly-customizable-pieces-of-CSS-code.">
+<a class="anchor" href="#Mixins-are-a-powerful-feature-of-SASS-that-allow-you-to-define-reusable-pieces-of-CSS-code-that-can-be-included-in-different-parts-of-your-code.-By-using-mixins,-you-can-write-less-code-and-make-your-CSS-more-modular-and-maintainable.-With-the-ability-to-take-arguments,-mixins-become-even-more-powerful,-allowing-you-to-create-highly-customizable-pieces-of-CSS-code." aria-hidden="true"><span class="octicon octicon-link"></span></a>Mixins are a powerful feature of SASS that allow you to define reusable pieces of CSS code that can be included in different parts of your code. By using mixins, you can write less code and make your CSS more modular and maintainable. With the ability to take arguments, mixins become even more powerful, allowing you to create highly customizable pieces of CSS code.<a class="anchor-link" href="#Mixins-are-a-powerful-feature-of-SASS-that-allow-you-to-define-reusable-pieces-of-CSS-code-that-can-be-included-in-different-parts-of-your-code.-By-using-mixins,-you-can-write-less-code-and-make-your-CSS-more-modular-and-maintainable.-With-the-ability-to-take-arguments,-mixins-become-even-more-powerful,-allowing-you-to-create-highly-customizable-pieces-of-CSS-code."> </a>
+</h4>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/myfiles/2023/04/17/mixins.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/myfiles/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://yuricoder07.github.io/myfiles/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/myfiles/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A student learning how to code.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

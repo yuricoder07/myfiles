@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      7 min read
     
 </span></p>
 
@@ -125,7 +125,6 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h4"><a href="#Basic-Information">Basic Information </a></li>
 <li class="toc-entry toc-h4"><a href="#Practice-Questions:">Practice Questions: </a></li>
-<li class="toc-entry toc-h4"><a href="#Examples">Examples </a></li>
 </ul>
 </li>
 </ul>
@@ -214,7 +213,7 @@ They are digital. The difference between analog and digital technologies is that
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="n">runs</span><span class="p">):</span>
     <span class="c1"># Repeat code for the amount of runs given</span>
@@ -237,6 +236,29 @@ They are digital. The difference between analog and digital technologies is that
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>binary is awesome
+binary is cool
+binary is cool
+binary is awesome
+binary is cool
+binary is cool
+binary is cool
+binary is cool
+binary is awesome
+binary is cool
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -263,10 +285,15 @@ They are digital. The difference between analog and digital technologies is that
 <ol>
 <li>What is the largest number can be represented by 5 bits?
 31</li>
-<li>One programing language can only use 16 bits to represent non-negative numbers, while a second language uses 56 bits to represent numbers. How many times as many unique numbers can be represented by the second language?</li>
+<li>One programing language can only use 16 bits to represent non-negative numbers, while a second language uses 56 bits to represent numbers. How many times as many unique numbers can be represented by the second language?
+2^16 - 1 = 65,535
+2^56 -1 = 72,057,594,037,927,935
+The second language can store about 1,099,528,405,248 times more numbers than the first language.</li>
 </ol>
 <ol>
-<li>5 bits are used to represent both positive and negative numbers, what is the largest number that can be represented by these bits? (<em>hint: different thatn question 1</em>)</li>
+<li>5 bits are used to represent both positive and negative numbers, what is the largest number that can be represented by these bits? (<em>hint: different thatn question 1</em>)
+Signed 5 Bit integer: 31
+Unsigned 5 bit integer: 15 </li>
 </ol>
 <h4 id="Examples">
 <a class="anchor" href="#Examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples<a class="anchor-link" href="#Examples"> </a>
@@ -281,7 +308,7 @@ They are digital. The difference between analog and digital technologies is that
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
 <span class="k">def</span> <span class="nf">exponent</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
     <span class="c1"># Print the operation performed, turning the parameters into strings to properly concatenate with the symbols "^" and "=".</span>
@@ -292,6 +319,20 @@ They are digital. The difference between analog and digital technologies is that
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5^2 = 25.0
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -317,18 +358,19 @@ They are digital. The difference between analog and digital technologies is that
 </h4>
 <ol>
 <li>
-<p>What values can each digit of a Base 5 system represent?</p>
+<p>What values can each digit of a Base 5 system represent?
+The value a 5 digit based system can represent is 5^n depending on where it correlates to then the prior values can be added to each other to be able to get the total value of the number as for instance 001001 can be represent as (0 x 2^6) + (0 x 2^6) + (1 x 2^5) ... and how a similar concept can be used in a base 10 system we could do the exact same thing with a base 5 system.</p>
 </li>
 <li>
-<p>What base is Hexadecimal? What range of values can each digit of Hexadecimal represent?</p>
+<p>What base is Hexadecimal? What range of values can each digit of Hexadecimal represent?
+Hexadecimals are base 16. This can range from 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f</p>
 </li>
 <li>
-<p>When using a base above 10, letters can be used to represent numbers past 9. These letters start from A and continue onwards. For example, the decimal number 10 is represented by the letter A in Hexadecimal. What letter would be used to represent the Base 10 number 23 in a Base 30 system? What about in a Base 50 system?</p>
+<p>When using a base above 10, letters can be used to represent numbers past 9. These letters start from A and continue onwards. For example, the decimal number 10 is represented by the letter A in Hexadecimal. What letter would be used to represent the Base 10 number 23 in a Base 30 system? What about in a Base 50 system?
+In a base system above 10, letters are used to represent numbers past 9. To find the letter that represents a particular number in a given base system, we perform integer division and modulus operations. For example, to represent the number 23 in a base 30 system, we divide 23 by 30 and take the remainder, which is 23. The corresponding letter for the number 23 in base 30 is H, so 23 in base 30 is represented as the single digit H. Similarly, to represent the number 23 in a base 50 system, we divide 23 by 50 and take the remainder, which is 23. The corresponding letter for the number 23 in base 50 is X, so 23 in base 50 is represented as the single digit X.
+#### Examples</p>
 </li>
 </ol>
-<h4 id="Examples">
-<a class="anchor" href="#Examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples<a class="anchor-link" href="#Examples"> </a>
-</h4>
 <ul>
 <li>Using 6 bits, we can represent 64 numbers, from 0 to 63, as 2^6 = 64.</li>
 <li>The numbers in a sequence of binary go from right to left, increasing by powers of two from 0 to the total amount of bits. The whole number represented is the sum of these bits. For example:<ol>
@@ -376,6 +418,77 @@ They are digital. The difference between analog and digital technologies is that
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bin_div</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">quotient</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">//</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+    <span class="n">remainder</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+    <span class="k">return</span> <span class="n">quotient</span> <span class="o">+</span> <span class="s2">" remainder: "</span> <span class="o">+</span> <span class="n">remainder</span>
+<span class="k">def</span> <span class="nf">bin_sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="k">def</span> <span class="nf">bin_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="k">def</span> <span class="nf">bin_multi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="c1"># operation table</span>
+<span class="k">def</span> <span class="nf">bin_opp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">opp</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">opp</span> <span class="o">==</span> <span class="s1">'+'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">bin_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">opp</span> <span class="o">==</span> <span class="s1">'-'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">bin_sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">opp</span> <span class="o">==</span> <span class="s1">'*'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">bin_multi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">opp</span> <span class="o">==</span> <span class="s1">'/'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">bin_div</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">"Invalid operator!"</span>
+
+
+<span class="n">addition</span> <span class="o">=</span> <span class="n">bin_opp</span><span class="p">(</span><span class="s1">'11110101'</span><span class="p">,</span> <span class="s1">'1110'</span><span class="p">,</span> <span class="s1">'+'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Results for addition: </span><span class="si">{</span><span class="n">addition</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">subtraction</span> <span class="o">=</span> <span class="n">bin_opp</span><span class="p">(</span><span class="s1">'110111101'</span><span class="p">,</span> <span class="s1">'101'</span><span class="p">,</span> <span class="s1">'-'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Results for substraction: </span><span class="si">{</span><span class="n">subtraction</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">multiplication</span> <span class="o">=</span> <span class="n">bin_opp</span><span class="p">(</span><span class="s1">'011101'</span><span class="p">,</span> <span class="s1">'11'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Results for multiplication: </span><span class="si">{</span><span class="n">multiplication</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="n">division</span> <span class="o">=</span> <span class="n">bin_opp</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'101101'</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Results for division: </span><span class="si">{</span><span class="n">division</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Results for addition: 100000011
+Results for substraction: 110111000
+Results for multiplication: 1010111
+Results for division: 0 remainder: 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 

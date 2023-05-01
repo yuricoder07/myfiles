@@ -10,7 +10,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Apr  3 09:29:45 2023
+ 
+# Make data base, printed on Sun Apr 30 22:09:59 2023
 
 # Variables
 
@@ -29,7 +30,6 @@ CURDIR := /Users/yuri/vscode/myfiles
 # makefile
 SHELL = /bin/sh
 # environment
- 
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
@@ -46,7 +46,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.pQbfSAq0Un/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.PEhSaaawgB/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -125,6 +125,7 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+ 
 # environment
 LC_ALL = C
 # environment
@@ -142,10 +143,9 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/yuri/opt/anaconda3
 # environment
-VSCODE_PID = 47055
+VSCODE_PID = 1878
 # environment
 _CE_CONDA = 
- 
 # environment
 LANG = C
 # variable set hash-table stats:
@@ -157,7 +157,7 @@ LANG = C
 
 # Directories
 
-# . (device 16777220, inode 27099200): 37 files, no impossibilities.
+# . (device 16777221, inode 27099200): 37 files, no impossibilities.
 
 # 37 files, no impossibilities in 1 directories.
 
@@ -211,6 +211,7 @@ server-detached: .FORCE
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-10-06 14:49:44
 #  File has been updated.
 #  Successfully updated.
@@ -314,6 +315,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Apr  3 09:29:45 2023
+# Finished Make data base on Sun Apr 30 22:09:59 2023
 
  

@@ -880,6 +880,20 @@ Year: 2020
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Error occurred:  no such table: basketball
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1116,14 +1130,14 @@ Using the same table, find a new .jpg image and add its image data to the databa
 <span class="kn">import</span> <span class="nn">io</span>
 
 <span class="c1"># Open a connection to the SQLite database</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;database.db&#39;</span><span class="p">)</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;hacksIMGdatabase.db&#39;</span><span class="p">)</span>
 
 <span class="c1"># Read the image file as binary data</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;images/kanye.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">jpg</span><span class="p">:</span>
-    <span class="n">image_data</span> <span class="o">=</span> <span class="n">jpg</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;images/kanye.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">png</span><span class="p">:</span>
+    <span class="n">image_data</span> <span class="o">=</span> <span class="n">png</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="c1"># Insert the image data into the database</span>
-<span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO images (name, data) VALUES (?, ?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;happy2&#39;</span><span class="p">,</span> <span class="n">image_data</span><span class="p">))</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO images (name, data) VALUES (?, ?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;mtfuji&#39;</span><span class="p">,</span> <span class="n">image_data</span><span class="p">))</span>
 
 <span class="c1"># Commit the transaction</span>
 <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
@@ -1132,10 +1146,10 @@ Using the same table, find a new .jpg image and add its image data to the databa
 <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="c1"># Open a connection to the SQLite database</span>
-<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;database.db&#39;</span><span class="p">)</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;hacksIMGdatabase.db&#39;</span><span class="p">)</span>
 
 <span class="c1"># Retrieve the image data from the database</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT data FROM images WHERE name=?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;happy2&#39;</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT data FROM images WHERE name=?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;mtfuji&#39;</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
 
 <span class="c1"># Convert the binary data to an image object</span>
 <span class="n">image_data</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -1149,29 +1163,6 @@ Using the same table, find a new .jpg image and add its image data to the databa
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">OperationalError</span>                          Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/Users/yuri/vscode/myfiles/_notebooks/2023-04-27-P3M-Team-SnapShot-Student.ipynb Cell 53</span> in <span class="ansi-cyan-fg">&lt;cell line: 14&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-04-27-P3M-Team-SnapShot-Student.ipynb#Y103sZmlsZQ%3D%3D?line=10&#39;&gt;11&lt;/a&gt;</span>     image_data = jpg.read()
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-04-27-P3M-Team-SnapShot-Student.ipynb#Y103sZmlsZQ%3D%3D?line=12&#39;&gt;13&lt;/a&gt;</span> # Insert the image data into the database
-<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-04-27-P3M-Team-SnapShot-Student.ipynb#Y103sZmlsZQ%3D%3D?line=13&#39;&gt;14&lt;/a&gt;</span> conn.execute(&#34;INSERT INTO images (name, data) VALUES (?, ?)&#34;, (&#39;happy2&#39;, image_data))
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-04-27-P3M-Team-SnapShot-Student.ipynb#Y103sZmlsZQ%3D%3D?line=15&#39;&gt;16&lt;/a&gt;</span> # Commit the transaction
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell:/Users/yuri/vscode/myfiles/_notebooks/2023-04-27-P3M-Team-SnapShot-Student.ipynb#Y103sZmlsZQ%3D%3D?line=16&#39;&gt;17&lt;/a&gt;</span> conn.commit()
-
-<span class="ansi-red-fg">OperationalError</span>: no such table: images</pre>
-</div>
-</div>
-
 </div>
 </div>
 

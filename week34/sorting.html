@@ -201,7 +201,7 @@ window.onload = wrap_img;
 <p>Discuss with a partner... 
 What are some strategies you would use to sort this list? (Don't worry about writing code for now)</p>
 <ul>
-<li>I would figure out where the smallest number is located and move it to the front. Then disregard that number and repeat the process until the list is sorted.</li>
+<li>I will locate the smallest number in the list and place it at the beginning. Subsequently, I will disregard that number and repeat the procedure until the list is sorted.</li>
 </ul>
 </blockquote>
 
@@ -242,7 +242,7 @@ Take about 5 minutes to read about your algorithm and be ready to explain it to 
 <ul>
 <li>Bubble Sort</li>
 <li>
-<mark>Selection Sort</mark><blockquote>
+<code>Selection Sort</code><blockquote>
 <p>Selection sort because it would be faster since the 0 and 75 would swap, making it closer to being sorted quicker.</p>
 </blockquote>
 </li>
@@ -252,7 +252,7 @@ Take about 5 minutes to read about your algorithm and be ready to explain it to 
 <ul>
 <li>Merge Sort</li>
 <li>
-<mark>Insertion Sort</mark><blockquote>
+<code>`Insertion Sort</code>&lt;/mark<code>&gt;</code><blockquote>
 <p>Insertion because it has a faster time complexity than if merge sort was used.</p>
 </blockquote>
 </li>
@@ -378,7 +378,7 @@ Select the algorithm you believe is best for each, explain.</p>
 <p>Run code and then research and answer these questions...</p>
 <ul>
 <li>Is a list and/or dictionary in python considered a primitive or collection type?  Why?<blockquote>
-<p>A list and a dictionary are considered collection types rather than primitive types. They are implemented using more complex data structures and algorithms than the primitive types. For example, a list in Python is typically implemented as a dynamic array, while a dictionary is usually implemented using a hash table. These data structures and algorithms are more complex than those used to implement primitive types, which is why they are considered collection types.</p>
+<p>List and dictionary are categorized as collection types instead of primitive types. They utilize sophisticated data structures and algorithms compared to primitive types. In Python, a list is commonly implemented as a dynamic array, while a dictionary is typically implemented using a hash table. These data structures and algorithms are more intricate compared to those employed for primitive types, hence the classification of list and dictionary as collection types.</p>
 </blockquote>
 </li>
 <li>Is the list passed into bubble sort "pass-by-value" or "pass-by-reference? Describe why in relation to output.<blockquote>
@@ -408,26 +408,25 @@ Select the algorithm you believe is best for each, explain.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Selection sort with basic arrays</span>
-
-<span class="k">def</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Selection sort [Arrays]</span>
+<span class="k">def</span> <span class="nf">selectionSort1</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span> <span class="c1"># takes in an array</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span> <span class="c1"># first iteration</span>
         <span class="n">min_idx</span> <span class="o">=</span> <span class="n">i</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span> <span class="c1"># second iteration</span>
             <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]:</span>
                 <span class="n">min_idx</span> <span class="o">=</span> <span class="n">j</span>
         <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">min_idx</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">arr</span>
 
-<span class="n">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"banana"</span><span class="p">,</span> <span class="s2">"apple"</span><span class="p">,</span> <span class="s2">"orange"</span><span class="p">,</span> <span class="s2">"pear"</span><span class="p">,</span> <span class="s2">"kiwi"</span><span class="p">,</span> <span class="s2">"grape"</span><span class="p">]</span>
-<span class="n">arr3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">arr4</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"bird"</span><span class="p">,</span> <span class="s2">"hamster"</span><span class="p">,</span> <span class="s2">"fish"</span><span class="p">,</span> <span class="s2">"turtle"</span><span class="p">]</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"pasta"</span><span class="p">,</span> <span class="s2">"chicken"</span><span class="p">,</span> <span class="s2">"pizza"</span><span class="p">,</span> <span class="s2">"wings"</span><span class="p">,</span> <span class="s2">"nachos"</span><span class="p">,</span> <span class="s2">"burger"</span><span class="p">]</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">399</span><span class="p">]</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"bird"</span><span class="p">,</span> <span class="s2">"hamster"</span><span class="p">,</span> <span class="s2">"fish"</span><span class="p">,</span> <span class="s2">"turtle"</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">selection_sort</span><span class="p">(</span><span class="n">arr1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">selection_sort</span><span class="p">(</span><span class="n">arr2</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">selection_sort</span><span class="p">(</span><span class="n">arr3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">selection_sort</span><span class="p">(</span><span class="n">arr4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">selectionSort1</span><span class="p">(</span><span class="n">num1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">selectionSort1</span><span class="p">(</span><span class="n">str1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">selectionSort1</span><span class="p">(</span><span class="n">num2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">selectionSort1</span><span class="p">(</span><span class="n">str2</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -440,9 +439,9 @@ Select the algorithm you believe is best for each, explain.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[1, 2, 3, 4, 5, 6]
-['apple', 'banana', 'grape', 'kiwi', 'orange', 'pear']
-[1, 2, 3, 4, 5, 6, 8, 9, 10, 20]
+<pre>[9, 12, 17, 26, 33, 44]
+['burger', 'chicken', 'nachos', 'pasta', 'pizza', 'wings']
+[1, 20, 24, 26, 50, 54, 82, 98, 100, 399]
 ['bird', 'cat', 'dog', 'fish', 'hamster', 'turtle']
 </pre>
 </div>
@@ -461,9 +460,8 @@ Select the algorithm you believe is best for each, explain.</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Selection sort with list of dictionaries and sorting by key</span>
-
-<span class="k">def</span> <span class="nf">selectionSort</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Selection sort [Dictionaries iterating through key's and values]</span>
+<span class="k">def</span> <span class="nf">selectionSort2</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">min_idx</span> <span class="o">=</span> <span class="n">i</span>
@@ -472,27 +470,27 @@ Select the algorithm you believe is best for each, explain.</p>
                 <span class="n">min_idx</span> <span class="o">=</span> <span class="n">j</span>
         <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="n">min_idx</span><span class="p">],</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">lst</span>
-
-<span class="k">def</span> <span class="nf">prettyPrint</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-    <span class="n">sorted_list</span> <span class="o">=</span> <span class="n">selectionSort</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="c1"># function for displaying neatly</span>
+<span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">sorted_list</span> <span class="o">=</span> <span class="n">selectionSort2</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Sorted by"</span><span class="p">,</span> <span class="n">key</span> <span class="o">+</span> <span class="s2">":"</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">sorted_list</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Name:"</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Age:"</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s1">'age'</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">City:"</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s1">'city'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Item:"</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s1">'item'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Rating:"</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s1">'rating'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">Description:"</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s1">'Description'</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
 
-<span class="n">list_of_people</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Risa"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s2">"city"</span><span class="p">:</span> <span class="s2">"New York"</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"John"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">63</span><span class="p">,</span> <span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Eugene"</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Shekar"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s2">"city"</span><span class="p">:</span> <span class="s2">"San Francisco"</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Ryan"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="s2">"city"</span><span class="p">:</span> <span class="s2">"Los Angeles"</span><span class="p">}</span>
+<span class="n">foodDictionary</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"item"</span><span class="p">:</span> <span class="s2">"Chicken"</span><span class="p">,</span> <span class="s2">"rating"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"Chicken"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"item"</span><span class="p">:</span> <span class="s2">"Pasta"</span><span class="p">,</span> <span class="s2">"rating"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"Pasta"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"item"</span><span class="p">:</span> <span class="s2">"Salad"</span><span class="p">,</span> <span class="s2">"rating"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"Salad"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"item"</span><span class="p">:</span> <span class="s2">"Burger"</span><span class="p">,</span> <span class="s2">"rating"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">"Description"</span><span class="p">:</span> <span class="s2">"Burger"</span><span class="p">}</span>
 <span class="p">]</span>
 
-<span class="n">key_row</span> <span class="o">=</span> <span class="n">list_of_people</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">key_row</span> <span class="o">=</span> <span class="n">foodDictionary</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">key_row</span><span class="p">:</span>
-    <span class="n">prettyPrint</span><span class="p">(</span><span class="n">list_of_people</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">foodDictionary</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -505,56 +503,56 @@ Select the algorithm you believe is best for each, explain.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Sorted by name:
-	Name: John
-	Age: 63
-	City: Eugene
+<pre>Sorted by item:
+	Item: Burger
+	Rating: 8
+	Description: Burger
 
-	Name: Risa
-	Age: 18
-	City: New York
+	Item: Chicken
+	Rating: 10
+	Description: Chicken
 
-	Name: Ryan
-	Age: 21
-	City: Los Angeles
+	Item: Pasta
+	Rating: 6
+	Description: Pasta
 
-	Name: Shekar
-	Age: 18
-	City: San Francisco
+	Item: Salad
+	Rating: 3
+	Description: Salad
 
-Sorted by age:
-	Name: Risa
-	Age: 18
-	City: New York
+Sorted by rating:
+	Item: Salad
+	Rating: 3
+	Description: Salad
 
-	Name: Shekar
-	Age: 18
-	City: San Francisco
+	Item: Pasta
+	Rating: 6
+	Description: Pasta
 
-	Name: Ryan
-	Age: 21
-	City: Los Angeles
+	Item: Burger
+	Rating: 8
+	Description: Burger
 
-	Name: John
-	Age: 63
-	City: Eugene
+	Item: Chicken
+	Rating: 10
+	Description: Chicken
 
-Sorted by city:
-	Name: John
-	Age: 63
-	City: Eugene
+Sorted by Description:
+	Item: Burger
+	Rating: 8
+	Description: Burger
 
-	Name: Ryan
-	Age: 21
-	City: Los Angeles
+	Item: Chicken
+	Rating: 10
+	Description: Chicken
 
-	Name: Risa
-	Age: 18
-	City: New York
+	Item: Pasta
+	Rating: 6
+	Description: Pasta
 
-	Name: Shekar
-	Age: 18
-	City: San Francisco
+	Item: Salad
+	Rating: 3
+	Description: Salad
 
 </pre>
 </div>
